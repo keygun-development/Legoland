@@ -11,7 +11,20 @@ const mix = require('laravel-mix');
  |
  */
 
+mix
+    .setPublicPath('./public')
+
 mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+    .vue()
+    .extract()
+
+mix
+    .sass('resources/css/app.scss', 'styles')
+    .options({
+        processCssUrls: false,
+        postCss: [require('tailwindcss')],
+    })
+
+mix
+    .copyDirectory('resources/images', 'public/images')
+    .copyDirectory('resources/fonts', 'public/fonts')
