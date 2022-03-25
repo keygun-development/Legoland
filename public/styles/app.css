@@ -430,17 +430,23 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-full {
   width: 100%;
 }
-.bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+.items-end {
+  align-items: flex-end;
 }
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.justify-around {
+  justify-content: space-around;
 }
 .pt-4 {
   padding-top: 1rem;
 }
+@font-face {
+  font-family: CeraPro;
+  src: url("../fonts/CeraPro-Regular.woff");
+}
+* {
+  font-family: CeraPro;
+}
+
 .c-header {
   min-height: 70px;
   width: 100%;
@@ -448,6 +454,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .c-header img {
   width: 300px;
+}
+.c-header a {
+  font-size: 20px;
 }
 .c-header .c-header__container {
   width: 1280px;
