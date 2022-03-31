@@ -1,0 +1,14 @@
+.swiper-container {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.swiper-pagination-bullet {
+    margin: 0 3px;
+}
+
+.swiper-slide {
+    &.free {
+        background-color: #93e4ff;
+    }
+}

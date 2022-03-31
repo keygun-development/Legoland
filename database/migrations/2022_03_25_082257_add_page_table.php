@@ -13,7 +13,10 @@ class AddPageTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('pages', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +26,6 @@ class AddPageTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('pages');
     }
 }

@@ -2,6 +2,12 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@import "global/main";
 @import "global/typography";
+@import "global/forms";
 
 @import "components/header";
+@import "components/footer";
+@import "components/card";
+@import "components/swiper";
+@import "components/buttons";

@@ -9,6 +9,21 @@
 
     a {
         font-size: 20px;
+        color: #000;
+
+        &.border_under {
+            display: inline-block;
+            background-image: linear-gradient(var(--border-color-white), var(--border-color-white));
+            background-size: 0% var(--border-width);
+            background-repeat: no-repeat;
+            transition: background-size 0.3s;
+            padding: 10px 0;
+            background-position: 50% calc(100% - var(--bottom-distance));
+
+            &:hover {
+                background-size: 100% var(--border-width);
+            }
+        }
     }
 
     .c-header__container {
