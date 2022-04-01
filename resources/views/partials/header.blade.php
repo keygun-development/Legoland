@@ -1,6 +1,6 @@
 <div class="c-header">
     <div class="c-header__container">
-        <div class="w-full flex items-end pt-4">
+        <div class="w-full flex items-end p-4">
             <a href="/">
                 <img src="{{ asset('images/legoland_logo.svg') }}" />
             </a>

@@ -473,24 +473,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
 .mt-4 {
   margin-top: 1rem;
 }
 .mt-8 {
   margin-top: 2rem;
 }
-.block {
-  display: block;
-}
-.inline {
-  display: inline;
+.ml-4 {
+  margin-left: 1rem;
 }
 .flex {
   display: flex;
+}
+.grid {
+  display: grid;
 }
 .w-full {
   width: 100%;
@@ -498,17 +494,20 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-7\/12 {
   width: 58.333333%;
 }
-.w-3\/12 {
-  width: 25%;
-}
 .w-5\/12 {
   width: 41.666667%;
+}
+.w-3\/12 {
+  width: 25%;
 }
 .w-2\/12 {
   width: 16.666667%;
 }
-.w-4\/12 {
-  width: 33.333333%;
+.cursor-pointer {
+  cursor: pointer;
+}
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 .flex-col {
   flex-direction: column;
@@ -525,12 +524,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .justify-around {
   justify-content: space-around;
 }
+.gap-4 {
+  gap: 1rem;
+}
+.p-4 {
+  padding: 1rem;
+}
 .py-16 {
   padding-top: 4rem;
   padding-bottom: 4rem;
-}
-.pt-4 {
-  padding-top: 1rem;
 }
 .text-center {
   text-align: center;
@@ -580,7 +582,7 @@ a {
   color: #FFCF00;
 }
 
-input {
+input, textarea {
   border: 1px solid #000;
   border-radius: 3px;
 }

@@ -19,12 +19,12 @@ class PageController extends Controller
 
     public function ticketsPage(Request $request)
     {
-        return 'Tickets pagina';
+        return view('tickets', ['title' => 'Tickets', 'tickets' => Ticket::all()]);
     }
 
     public function cartPage(Request $request)
     {
-        return 'Cart pagina';
+        return view('cart', ['title' => 'Winkelmandje', 'products' => (new \App\Models\Ticket)->getCurrentTickets()]);
     }
 
     public function checkoutPage(Request $request)
@@ -39,11 +39,11 @@ class PageController extends Controller
 
     public function contactPage(Request $request)
     {
-        return view('contact', ['name' => 'Keagan']);
+        return view('contact', ['title' => 'Contact']);
     }
 
     public function newsPage(Request $request)
     {
-        return 'Nieuwsbrief pagina';
+        return view('newsletter', ['title' => 'Nieuwsbrief']);
     }
 }

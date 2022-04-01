@@ -29,7 +29,7 @@
                 >
                     <template v-slot:items>
                         <div class="flex flex-col w-3/12">
-                            <input id="amount" type="number" />
+                            <input value="1" id="amount" type="number" />
                             <button v-on:click="$refs.childRef.addItems()" class="c-button c-button__default mt-4">
                                 Toevoegen aan <i class="fa fa-shopping-cart"></i>
                             </button>

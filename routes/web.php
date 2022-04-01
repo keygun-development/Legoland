@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\NewsletterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,8 @@ Route::get('/checkout', [PageController::class, 'checkoutPage']);
 Route::get('/tickets/{ticket:id}', [PageController::class, 'ticketdetailPage']);
 
 Route::get('/nieuwsbrief', [PageController::class, 'newsPage']);
+
+Route::post('/nieuwsbrief/send', [NewsletterController::class, 'store']);
 
 Route::get('/contact', [PageController::class, 'contactPage']);
 
