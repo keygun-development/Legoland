@@ -9,10 +9,23 @@ class Ticket extends Model
 {
     use HasFactory;
 
-    public function getCurrentTickets(): string
+    public function getSelectedTickets(): array
     {
-        $data = "<script>document.write(localStorage.getItem('ticket_object'));</script>";
-        dd(Ticket::where('id', 1));
-        return $data;
+        $gettickets = json_decode($_COOKIE['tickets']);
+        $tickets = [];
+        foreach ($gettickets as $ticket) {
+            array_push($tickets, Ticket::find($ticket->id));
+        }
+        return $tickets;
+    }
+
+    public function getTicketAmounts(): array
+    {
+        $gettickets = json_decode($_COOKIE['tickets']);
+        $tickets = [];
+        foreach ($gettickets as $ticket) {
+            array_push($tickets, $ticket->amount);
+        }
+        return $tickets;
     }
 }

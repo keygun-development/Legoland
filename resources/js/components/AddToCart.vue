@@ -30,7 +30,9 @@ export default {
         addItems: function () {
             this.error = ""
             this.success = ""
-            const ticketList = JSON.parse(localStorage.getItem('ticket_object') || "[]");
+
+            const cookieObj = new URLSearchParams(document.cookie.replaceAll("; ","&"))
+            let ticketList = JSON.parse(cookieObj.get("tickets")) || [];
             let duplicate = false;
             const amount = document.getElementById(this.itemAmount)
 
@@ -48,13 +50,26 @@ export default {
 
                 if (!duplicate) {
                     ticketList.push({"id":this.itemId,"amount":amount.value})
-                    localStorage.setItem('ticket_object',JSON.stringify(ticketList));
+                    this.setCookie('tickets', JSON.stringify(ticketList), 7);
                 } else {
-                    localStorage.setItem('ticket_object',JSON.stringify(ticketList));
+                    this.setCookie('tickets', JSON.stringify(ticketList), 7);
                 }
+
                 this.success = "Product toegevoegd!"
             }
+        },
+
+        setCookie: function (name, value, days) {
+            let expires = "";
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
         }
+
+
     }
 }
 </script>

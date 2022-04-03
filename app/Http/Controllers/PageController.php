@@ -2,34 +2,40 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         return view('welcome', ['title' => 'Legoland Doetinchem']);
     }
 
-    public function informationPage(Request $request)
+    public function informationPage()
     {
         return view('information',  ['title' => 'Informatie']);
     }
 
-    public function ticketsPage(Request $request)
+    public function ticketsPage()
     {
         return view('tickets', ['title' => 'Tickets', 'tickets' => Ticket::all()]);
     }
 
-    public function cartPage(Request $request)
+    public function cartPage()
     {
-        return view('cart', ['title' => 'Winkelmandje', 'products' => (new \App\Models\Ticket)->getCurrentTickets()]);
+        return view('cart', ['title' => 'Winkelmandje', 'products' => (new \App\Models\Ticket)->getSelectedTickets(), 'amount' => (new \App\Models\Ticket)->getTicketAmounts()]);
     }
 
-    public function checkoutPage(Request $request)
+    public function checkoutPage()
     {
-        return 'Checkout pagina';
+        return view('checkout', ['title' => 'Afrekenen', 'products' => (new \App\Models\Ticket)->getSelectedTickets(), 'amount' => (new \App\Models\Ticket)->getTicketAmounts()]);
+    }
+
+    public function completePage(Order $order)
+    {
+        return view('complete', ['title' => 'Betaling voldaan', 'order' => $order]);
     }
 
     public function ticketdetailPage(Request $request, Ticket $ticket)
@@ -37,12 +43,12 @@ class PageController extends Controller
         return view('ticketdetails',  ['post' => $ticket]);
     }
 
-    public function contactPage(Request $request)
+    public function contactPage()
     {
         return view('contact', ['title' => 'Contact']);
     }
 
-    public function newsPage(Request $request)
+    public function newsPage()
     {
         return view('newsletter', ['title' => 'Nieuwsbrief']);
     }

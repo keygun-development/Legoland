@@ -9,11 +9,15 @@ class ContactController extends Controller
 {
     public function store(Request $request)
     {
-        $newContact = new Contact();
-        $newContact->name = $request->name;
-        $newContact->email = $request->email;
-        $newContact->message = $request->message;
-        $newContact->save();
-        return redirect('/contact')->with('message', 'Bedankt voor uw bericht.');
+        if (!$request->filled('name') || !$request->filled('email') || !$request->filled('message')) {
+            return redirect('/contact')->with('error', 'Geef uw naam email en bericht op.');
+        } else {
+            $newContact = new Contact();
+            $newContact->name = $request->name;
+            $newContact->email = $request->email;
+            $newContact->message = $request->message;
+            $newContact->save();
+            return redirect('/contact')->with('success', 'Bedankt voor uw bericht.');
+        }
     }
 }
