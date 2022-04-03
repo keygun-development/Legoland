@@ -11,7 +11,8 @@
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "mollie/laravel-mollie": "^2.19"
+        "mollie/laravel-mollie": "^2.19",
+        "mollie/mollie-api-php": "^2.41"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

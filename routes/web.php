@@ -38,8 +38,8 @@ Route::get('/contact', [PageController::class, 'contactPage']);
 
 Route::post('/contact/send', [ContactController::class, 'store']);
 
+Route::get('/payments/webhook/', [MollieWebhookController::Class => 'handle'])->name('/payments/webhook/');
+
+Route::post('/betalen/send', [MollieWebhookController::Class, 'checkout'])->name('/betalen/send');
+
 Route::get('/order', [PageController::class, 'completePage']);
-
-Route::get('payment-success',[MollieWebhookController::Class, 'handle'])->name('payment.success');
-
-Route::post('mollie-payment',[MollieWebhookController::Class, 'checkout'])->name('mollie.payment');

@@ -13,7 +13,7 @@
                 U ontvangt de tickets per mail direct na de aankoop. Vandaar dat wij uw mailadres nodig hebben.
             </p>
             @php($total = 0)
-            @if(count($amount) > 0)
+            @if($amount)
                 <h2>
                     Producten:
                 </h2>
@@ -23,7 +23,7 @@
                 @endfor
                 <update-cart class="mt-4">
                 </update-cart>
-                <form action="/mollie-payment" method="post" class="mt-4 flex">
+                <form action="/betalen/send" method="post" class="mt-4 flex">
                     @csrf
                     <div class="w-2/12">
                         <div class="inputRow mt-4">

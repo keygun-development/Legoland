@@ -2,41 +2,45 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Illuminate\Http\Request;
-use Mollie\Laravel\Facades\Mollie;
+use Mollie\Api\MollieApiClient;
 
 class MollieWebhookController extends Controller
 {
-    public function  __construct() {
-        Mollie::api()->setApiKey(env("MOLLIE_KEY")); // your mollie test api key
-    }
-
     public function checkout(Request $request)
     {
+        $mollie = new MollieApiClient();
+        $mollie->setApiKey(env("MOLLIE_KEY"));
         $orderId = time();
-        $payment = Mollie::api()->payments->create([
+        $payment = $mollie->payments->create([
             "amount" => [
                 "currency" => "EUR",
-                "value" => $request->price
+                "value" => $request->price // You must send the correct number of decimals, thus we enforce the use of strings
             ],
-            "description" => "Bestelling: ".$orderId,
-            "redirectUrl" => route('payment.success'),
-            "webhookUrl"  => route('/webhooks/mollie'),
+            "description" => "Order ".$orderId,
+            "redirectUrl" => "https://".$_SERVER['HTTP_HOST']."/order?order_id=".$orderId,
+            "webhookUrl" => route("/payments/webhook/"),
             "metadata" => [
                 "order_id" => $orderId,
             ],
         ]);
 
+        $newOrder = new Order();
+        $newOrder->name = $request->name;
+        $newOrder->email = $request->email;
+        $newOrder->tickets = $_COOKIE['tickets'];
+        $newOrder->price = $request->price;
+        $newOrder->save();
+
         return redirect()->away($payment->getCheckoutUrl());
     }
 
-    public function handle(Request $request) {
-        $paymentId = $request->input('id');
-        $payment = Mollie::api()->payments->get($paymentId, ['testmode'=>'true']);
-
-        if ($payment->isPaid())
-        {
-            echo 'Payment received.';
-        }
+    public function handle() {
+        $mollie = new MollieApiClient();
+        $mollie->setApiKey(env("MOLLIE_KEY"));
+        $payments = $mollie->payments->page();
+        setcookie('tickets', false);
+        return $payments[0];
     }
 }

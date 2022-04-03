@@ -35,10 +35,10 @@ class PageController extends Controller
 
     public function completePage(Order $order)
     {
-        return view('complete', ['title' => 'Betaling voldaan', 'order' => $order]);
+        return view('complete', ['title' => 'Betaling voldaan', 'order' => (new MollieWebhookController)->handle()]);
     }
 
-    public function ticketdetailPage(Request $request, Ticket $ticket)
+    public function ticketdetailPage(Ticket $ticket)
     {
         return view('ticketdetails',  ['post' => $ticket]);
     }

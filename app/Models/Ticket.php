@@ -9,23 +9,31 @@ class Ticket extends Model
 {
     use HasFactory;
 
-    public function getSelectedTickets(): array
+    public function getSelectedTickets(): ?array
     {
-        $gettickets = json_decode($_COOKIE['tickets']);
-        $tickets = [];
-        foreach ($gettickets as $ticket) {
-            array_push($tickets, Ticket::find($ticket->id));
+        if(isset($_COOKIE['tickets'])) {
+            $gettickets = json_decode($_COOKIE['tickets']);
+            $tickets = [];
+            foreach ($gettickets as $ticket) {
+                array_push($tickets, Ticket::find($ticket->id));
+            }
+            return $tickets;
+        } else {
+            return null;
         }
-        return $tickets;
     }
 
-    public function getTicketAmounts(): array
+    public function getTicketAmounts(): ?array
     {
-        $gettickets = json_decode($_COOKIE['tickets']);
-        $tickets = [];
-        foreach ($gettickets as $ticket) {
-            array_push($tickets, $ticket->amount);
+        if(isset($_COOKIE['tickets'])) {
+            $gettickets = json_decode($_COOKIE['tickets']);
+            $tickets = [];
+            foreach ($gettickets as $ticket) {
+                array_push($tickets, $ticket->amount);
+            }
+            return $tickets;
+        } else {
+            return null;
         }
-        return $tickets;
     }
 }

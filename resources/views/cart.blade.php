@@ -7,7 +7,7 @@
         </h1>
         <div class="c-cart">
             @php($total = 0)
-            @if(count($amount) > 0)
+            @if($products)
                 @for($i = 0; $i<count($amount); $i++)
                     @include('components/cart-single-product', ['ticket' => $products[$i], 'amount' => $amount[$i]])
                     @php($total += $products[$i]->price*$amount[$i])
