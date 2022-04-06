@@ -23,6 +23,23 @@
                 <a class="border_under" href="/cart">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                 </a>
+                @if(!auth()->check())
+                <div class="flex items-center">
+                    <a class="border_under" href="/inloggen">
+                        Inloggen
+                    </a>
+                    <p class="mx-4">
+                        |
+                    </p>
+                    <a class="border_under" href="/inloggen">
+                        Registreren
+                    </a>
+                </div>
+                @else
+                    <a class="border_under" href="/account/dashboard">
+                        <i class="fas fa-user"></i>
+                    </a>
+                @endif
             </div>
         </div>
     </div>

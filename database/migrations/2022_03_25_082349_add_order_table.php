@@ -19,6 +19,8 @@ class AddOrderTable extends Migration
             $table->string('email');
             $table->string('tickets');
             $table->float('price');
+            $table->integer('user_id');
+            $table->integer('mollie_order_id');
             $table->timestamps();
         });
     }

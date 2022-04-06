@@ -473,17 +473,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
 .mt-4 {
   margin-top: 1rem;
 }
-.ml-4 {
-  margin-left: 1rem;
+.mb-4 {
+  margin-bottom: 1rem;
 }
 .mt-8 {
   margin-top: 2rem;
 }
-.mb-4 {
-  margin-bottom: 1rem;
+.ml-4 {
+  margin-left: 1rem;
 }
 .flex {
   display: flex;
@@ -494,8 +498,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hidden {
   display: none;
 }
+.w-2\/12 {
+  width: 16.666667%;
+}
 .w-full {
   width: 100%;
+}
+.w-1\/12 {
+  width: 8.333333%;
 }
 .w-7\/12 {
   width: 58.333333%;
@@ -506,14 +516,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-3\/12 {
   width: 25%;
 }
-.w-2\/12 {
-  width: 16.666667%;
-}
-.w-10\/12 {
-  width: 83.333333%;
-}
-.w-1\/12 {
-  width: 8.333333%;
+.w-6\/12 {
+  width: 50%;
 }
 .cursor-pointer {
   cursor: pointer;
@@ -521,8 +525,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
 .flex-col {
   flex-direction: column;
+}
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
 }
 .items-end {
   align-items: flex-end;
@@ -545,6 +558,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .gap-4 {
   gap: 1rem;
 }
+.border-r {
+  border-right-width: 1px;
+}
+.border-r-2 {
+  border-right-width: 2px;
+}
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
 .p-4 {
   padding: 1rem;
 }
@@ -552,19 +575,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
+.text-left {
+  text-align: left;
+}
 .text-center {
   text-align: center;
 }
 .font-bold {
   font-weight: 700;
 }
-.text-red-500 {
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
-}
 .text-lime-500 {
   --tw-text-opacity: 1;
   color: rgb(132 204 22 / var(--tw-text-opacity));
+}
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 * {
   --border-color-white: #fff;
@@ -677,11 +703,32 @@ input, textarea {
   font-weight: bold;
 }
 
+.c-button__account {
+  padding: 10px 15px;
+  background-color: #efefef;
+  border: none;
+  border-radius: 0;
+}
+.c-button__account:hover {
+  font-weight: bold;
+  background-color: #eaeaea;
+}
+
 .c-cart__single {
   background-color: #fdfdfd;
   width: 100%;
   padding: 25px 50px;
+  color: #000;
 }
 .c-cart__single:nth-child(odd) {
   background-color: #f8f8f8;
+}
+
+.c-authenticate {
+  border-radius: 5px;
+  border: solid 1px #000;
+  padding: 20px;
+}
+.c-authenticate input {
+  padding: 5px;
 }

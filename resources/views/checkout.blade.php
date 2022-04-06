@@ -23,6 +23,12 @@
                 @endfor
                 <update-cart class="mt-4">
                 </update-cart>
+                @if(!auth()->check())
+                    <p class="text-red-500">
+                        U bent momenteel niet ingelogd. U kunt <a href="/inloggen">hier</a> registreren en/of inloggen.
+                        U kunt ook verder gaan met uw bestelling.
+                    </p>
+                @endif
                 <form action="/betalen/send" method="post" class="mt-4 flex">
                     @csrf
                     <div class="w-2/12">
@@ -42,6 +48,7 @@
                         <input class="mt-4" type="text" name="name">
                         <input class="mt-4" type="email" name="email">
                         <input class="mt-4" type="hidden" name="price" value="{{ $total }}">
+                        <input class="mt-4" type="hidden" name="userid" value="{{ \Illuminate\Support\Facades\Auth::id() }}">
                         <input class="mt-4 c-button c-button__default cursor-pointer" type="submit" name="sendPayment" value="Betalen">
                     </div>
                 </form>

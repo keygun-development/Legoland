@@ -12,3 +12,15 @@
         font-weight: bold;
     }
 }
+
+.c-button__account {
+    padding: 10px 15px;
+    background-color: #efefef;
+    border: none;
+    border-radius: 0;
+
+    &:hover {
+        font-weight: bold;
+        background-color: #eaeaea;
+    }
+}

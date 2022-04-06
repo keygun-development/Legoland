@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\Ticket;
-use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
@@ -18,24 +17,49 @@ class PageController extends Controller
         return view('information',  ['title' => 'Informatie']);
     }
 
+    public function loginPage()
+    {
+        return view('login');
+    }
+
     public function ticketsPage()
     {
         return view('tickets', ['title' => 'Tickets', 'tickets' => Ticket::all()]);
     }
 
-    public function cartPage()
+    public function accountDashboardPage()
     {
-        return view('cart', ['title' => 'Winkelmandje', 'products' => (new \App\Models\Ticket)->getSelectedTickets(), 'amount' => (new \App\Models\Ticket)->getTicketAmounts()]);
+        return view('account.dashboard', ['title' => 'Dashboard']);
     }
 
-    public function checkoutPage()
+    public function accountOrdersPage(OrderController $orderController)
     {
-        return view('checkout', ['title' => 'Afrekenen', 'products' => (new \App\Models\Ticket)->getSelectedTickets(), 'amount' => (new \App\Models\Ticket)->getTicketAmounts()]);
+        return view('account.orders', ['title' => 'Bestellingen', 'orders' => $orderController->getUserOrders()]);
     }
 
-    public function completePage(Order $order)
+    public function accountSettingsPage()
     {
-        return view('complete', ['title' => 'Betaling voldaan', 'order' => (new MollieWebhookController)->handle()]);
+        return view('account.dashboard', ['title' => 'Dashboard']);
+    }
+
+    public function accountOrderDetailPage(Order $order)
+    {
+        return view('orderdetail',  ['order' => $order]);
+    }
+
+    public function cartPage(Ticket $ticket)
+    {
+        return view('cart', ['title' => 'Winkelmandje', 'products' => $ticket->getSelectedTickets(), 'amount' => $ticket->getTicketAmounts()]);
+    }
+
+    public function checkoutPage(Ticket $ticket)
+    {
+        return view('checkout', ['title' => 'Afrekenen', 'products' => $ticket->getSelectedTickets(), 'amount' => $ticket->getTicketAmounts()]);
+    }
+
+    public function completePage(MollieWebhookController $order)
+    {
+        return view('complete', ['title' => 'Betaling voldaan', 'order' => $order->handle()]);
     }
 
     public function ticketdetailPage(Ticket $ticket)

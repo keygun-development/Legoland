@@ -2,9 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @mixin Builder
+ */
 class Ticket extends Model
 {
     use HasFactory;
@@ -31,6 +35,16 @@ class Ticket extends Model
             foreach ($gettickets as $ticket) {
                 array_push($tickets, $ticket->amount);
             }
+            return $tickets;
+        } else {
+            return null;
+        }
+    }
+
+    public function getTicketByID($ticketid): ?array
+    {
+        $tickets = (new Ticket)->where("id", $ticketid)->get()->all();
+        if (count($tickets) > 0) {
             return $tickets;
         } else {
             return null;
