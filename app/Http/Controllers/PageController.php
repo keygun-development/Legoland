@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\Ticket;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
 {
@@ -37,9 +39,9 @@ class PageController extends Controller
         return view('account.orders', ['title' => 'Bestellingen', 'orders' => $orderController->getUserOrders()]);
     }
 
-    public function accountSettingsPage()
+    public function accountSettingsPage(UserController $user)
     {
-        return view('account.dashboard', ['title' => 'Dashboard']);
+        return view('account.settings', ['title' => 'Mijn gegevens', 'user' => (new \App\Models\User)->findOrFail(Auth::id())]);
     }
 
     public function accountOrderDetailPage(Order $order)

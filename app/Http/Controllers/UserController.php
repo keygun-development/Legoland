@@ -22,6 +22,20 @@ class UserController extends Controller
         }
     }
 
+    public function updateUser(Request $request)
+    {
+        if (!$request->filled('name') || !$request->filled('email')) {
+            return redirect('/inloggen')->with('error', 'Geef uw naam en e-mailadres op.');
+        } else {
+            $user = (new \App\Models\User)->where('id', Auth::id());
+            $user->update([
+                'name' => $request->name,
+                'email' => $request->email
+            ]);
+            return redirect('/account/settings')->with('success', 'Succesvol aangepast.');
+        }
+    }
+
     public function login(Request $request)
     {
         if (!$request->filled('email') || !$request->filled('password')) {

@@ -50,6 +50,8 @@ Route::get('/nieuwsbrief', [PageController::class, 'newsPage']);
 
 Route::post('/nieuwsbrief/send', [NewsletterController::class, 'store']);
 
+Route::post('/account/settings/update', [UserController::class, 'updateUser']);
+
 Route::get('/contact', [PageController::class, 'contactPage']);
 
 Route::post('/contact/send', [ContactController::class, 'store']);
