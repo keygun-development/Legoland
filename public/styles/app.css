@@ -486,9 +486,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-8 {
   margin-top: 2rem;
 }
-.ml-4 {
-  margin-left: 1rem;
-}
 .flex {
   display: flex;
 }
@@ -525,17 +522,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
-.flex-row-reverse {
-  flex-direction: row-reverse;
-}
 .flex-col {
   flex-direction: column;
-}
-.flex-col-reverse {
-  flex-direction: column-reverse;
-}
-.flex-wrap-reverse {
-  flex-wrap: wrap-reverse;
 }
 .items-end {
   align-items: flex-end;
@@ -558,9 +546,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .gap-4 {
   gap: 1rem;
 }
-.border-r {
-  border-right-width: 1px;
-}
 .border-r-2 {
   border-right-width: 2px;
 }
@@ -575,22 +560,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
-.text-left {
-  text-align: left;
-}
 .text-center {
   text-align: center;
 }
 .font-bold {
   font-weight: 700;
 }
-.text-lime-500 {
-  --tw-text-opacity: 1;
-  color: rgb(132 204 22 / var(--tw-text-opacity));
-}
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+.text-lime-500 {
+  --tw-text-opacity: 1;
+  color: rgb(132 204 22 / var(--tw-text-opacity));
 }
 * {
   --border-color-white: #fff;
@@ -687,6 +669,14 @@ input, textarea {
 
 .swiper-slide.free {
   background-color: #93e4ff;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: #FFCF00 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #FFCF00 !important;
 }
 
 .c-button {
