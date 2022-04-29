@@ -56,8 +56,12 @@ Route::get('/contact', [PageController::class, 'contactPage']);
 
 Route::post('/contact/send', [ContactController::class, 'store']);
 
+Route::get('/accommodation', [PageController::class, 'accommodationPage']);
+
 Route::get('/payments/webhook/', [MollieWebhookController::Class => 'handle'])->name('/payments/webhook/');
 
 Route::post('/betalen/send', [MollieWebhookController::Class, 'checkout'])->name('/betalen/send');
 
 Route::get('/order', [PageController::class, 'completePage']);
+
+
