@@ -61,3 +61,5 @@ Route::get('/payments/webhook/', [MollieWebhookController::Class => 'handle'])->
 Route::post('/betalen/send', [MollieWebhookController::Class, 'checkout'])->name('/betalen/send');
 
 Route::get('/order', [PageController::class, 'completePage']);
+
+Route::get('/attracties/1', [PageController::class, 'attractiondetailPage']);
