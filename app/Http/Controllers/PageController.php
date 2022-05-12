@@ -78,4 +78,9 @@ class PageController extends Controller
     {
         return view('newsletter', ['title' => 'Nieuwsbrief']);
     }
+
+    public function accommodationPage()
+    {
+        return view('accommodation', ['title' => 'Accommodatie']);
+    }
 }
