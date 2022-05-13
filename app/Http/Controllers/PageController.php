@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Attraction;
 use App\Models\Order;
 use App\Models\Ticket;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
@@ -79,8 +79,8 @@ class PageController extends Controller
         return view('newsletter', ['title' => 'Nieuwsbrief']);
     }
 
-    public function attractiondetailPage()
+    public function attractiondetailPage(Attraction $attraction)
     {
-        return view('attractiondetails', ['title' => 'Attractie details']);
+        return view('attractiondetails', ['title' => 'Attractie details', 'attraction' => $attraction]);
     }
 }

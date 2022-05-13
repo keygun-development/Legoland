@@ -489,6 +489,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-4 {
   margin-bottom: 1rem;
 }
+.box-border {
+  box-sizing: border-box;
+}
 .flex {
   display: flex;
 }
@@ -595,6 +598,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .container {
   max-width: 1080px;
   margin: 0 auto;
+}
+
+li {
+  list-style-type: disc;
 }
 
 @font-face {
