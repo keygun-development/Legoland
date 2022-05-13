@@ -88,4 +88,9 @@ class PageController extends Controller
     {
         return view('attractiondetails', ['title' => 'Attractie details', 'attraction' => $attraction]);
     }
+
+    public function accommodationPage()
+    {
+        return view('accommodation', ['title' => 'Accommodatie']);
+    }
 }
