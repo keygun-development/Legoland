@@ -19,6 +19,11 @@ class PageController extends Controller
         return view('information',  ['title' => 'Informatie']);
     }
 
+    public function attractiePage()
+    {
+        return view('attractiesOverview',  ['title' => 'Attracties']);
+    }
+
     public function loginPage()
     {
         return view('login');
