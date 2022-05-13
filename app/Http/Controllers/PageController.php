@@ -78,4 +78,9 @@ class PageController extends Controller
     {
         return view('newsletter', ['title' => 'Nieuwsbrief']);
     }
+
+    public function attractiondetailPage()
+    {
+        return view('attractiondetails', ['title' => 'Attractie details']);
+    }
 }

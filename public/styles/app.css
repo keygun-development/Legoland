@@ -477,14 +477,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 1rem;
   margin-right: 1rem;
 }
+.mt-12 {
+  margin-top: 3rem;
+}
+.mt-8 {
+  margin-top: 2rem;
+}
 .mt-4 {
   margin-top: 1rem;
 }
 .mb-4 {
   margin-bottom: 1rem;
-}
-.mt-8 {
-  margin-top: 2rem;
 }
 .flex {
   display: flex;
@@ -495,11 +498,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hidden {
   display: none;
 }
-.w-2\/12 {
-  width: 16.666667%;
-}
 .w-full {
   width: 100%;
+}
+.w-5\/12 {
+  width: 41.666667%;
+}
+.w-6\/12 {
+  width: 50%;
+}
+.w-2\/12 {
+  width: 16.666667%;
 }
 .w-1\/12 {
   width: 8.333333%;
@@ -507,14 +516,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-7\/12 {
   width: 58.333333%;
 }
-.w-5\/12 {
-  width: 41.666667%;
-}
 .w-3\/12 {
   width: 25%;
-}
-.w-6\/12 {
-  width: 50%;
 }
 .cursor-pointer {
   cursor: pointer;
@@ -566,6 +569,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .font-bold {
   font-weight: 700;
 }
+.text-\[\#7E7E7E\] {
+  --tw-text-opacity: 1;
+  color: rgb(126 126 126 / var(--tw-text-opacity));
+}
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
@@ -573,6 +580,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-lime-500 {
   --tw-text-opacity: 1;
   color: rgb(132 204 22 / var(--tw-text-opacity));
+}
+.underline {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 * {
   --border-color-white: #fff;
@@ -721,4 +732,9 @@ input, textarea {
 }
 .c-authenticate input {
   padding: 5px;
+}
+
+.c-image__rounded {
+  border-radius: 14px;
+  border: solid 1px #707070;
 }
