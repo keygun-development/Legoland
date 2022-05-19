@@ -477,17 +477,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 1rem;
   margin-right: 1rem;
 }
-.mt-2 {
-  margin-top: 0.5rem;
-}
-.mt-6 {
-  margin-top: 1.5rem;
-}
 .mt-12 {
   margin-top: 3rem;
 }
 .mt-8 {
   margin-top: 2rem;
+}
+.mt-2 {
+  margin-top: 0.5rem;
+}
+.mt-6 {
+  margin-top: 1.5rem;
 }
 .mt-4 {
   margin-top: 1rem;
@@ -498,9 +498,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .box-border {
   box-sizing: border-box;
 }
-.inline-block {
-  display: inline-block;
-}
 .flex {
   display: flex;
 }
@@ -510,9 +507,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hidden {
   display: none;
 }
-.w-5\/6 {
-  width: 83.333333%;
-}
 .w-full {
   width: 100%;
 }
@@ -521,6 +515,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-6\/12 {
   width: 50%;
+}
+.w-11\/12 {
+  width: 91.666667%;
 }
 .w-2\/12 {
   width: 16.666667%;
@@ -537,11 +534,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .cursor-pointer {
   cursor: pointer;
 }
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .flex-col {
   flex-direction: column;
@@ -594,10 +591,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
-.bg-yellow-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(250 204 21 / var(--tw-bg-opacity));
-}
 .p-4 {
   padding: 1rem;
 }
@@ -605,40 +598,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-.py-2\.5 {
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
-}
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
 .text-center {
   text-align: center;
 }
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-.font-medium {
-  font-weight: 500;
-}
 .font-bold {
   font-weight: 700;
-}
-.uppercase {
-  text-transform: uppercase;
-}
-.leading-tight {
-  line-height: 1.25;
-}
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 .text-\[\#7E7E7E\] {
   --tw-text-opacity: 1;
@@ -656,24 +620,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
-.shadow-md {
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-.transition {
-  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-.duration-150 {
-  transition-duration: 150ms;
-}
-.ease-in-out {
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
 * {
   --border-color-white: #fff;
   --border-width: 5px;
@@ -688,6 +634,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 li {
   list-style-type: disc;
+}
+
+.transition {
+  transition: all 0.2s ease-out;
+}
+
+.h-60 {
+  height: 14rem;
+}
+
+.w-128 {
+  width: 32rem;
 }
 
 @font-face {
@@ -808,6 +766,19 @@ input, textarea {
   background-color: #eaeaea;
 }
 
+.c-button__attraction {
+  border-radius: 0;
+  border: 2px solid #000;
+  transition: 0.3s;
+  text-align: center;
+}
+.c-button__attraction:hover {
+  border-radius: 20px;
+  transition: 0.3s;
+  --tw-bg-opacity: 1;
+  background-color: rgb(161 98 7 / var(--tw-bg-opacity));
+}
+
 .c-cart__single {
   background-color: #fdfdfd;
   width: 100%;
@@ -830,57 +801,4 @@ input, textarea {
 .c-image__rounded {
   border-radius: 14px;
   border: solid 1px #707070;
-}
-
-.hover\:rounded-md:hover {
-  border-radius: 0.375rem;
-}
-
-.hover\:border-black:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity));
-}
-
-.hover\:bg-yellow-700:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(161 98 7 / var(--tw-bg-opacity));
-}
-
-.hover\:shadow-lg:hover {
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.focus\:bg-yellow-700:focus {
-  --tw-bg-opacity: 1;
-  background-color: rgb(161 98 7 / var(--tw-bg-opacity));
-}
-
-.focus\:shadow-lg:focus {
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.focus\:outline-none:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
-.focus\:ring-0:focus {
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-}
-
-.active\:bg-yellow-500:active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(234 179 8 / var(--tw-bg-opacity));
-}
-
-.active\:shadow-lg:active {
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }

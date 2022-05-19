@@ -20,8 +20,11 @@
                 <a class="border_under" href="/contact">
                     Contact
                 </a>
+                <a class="border_under" href="/accommodation">
+                    Accommodaties
+                </a>
                 <a class="border_under" href="/attracties">
-                    Attractie Overview
+                    Attracties
                 </a>
                 <a class="border_under" href="/cart">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>

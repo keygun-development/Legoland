@@ -24,3 +24,16 @@
         background-color: #eaeaea;
     }
 }
+
+.c-button__attraction {
+    border-radius: 0;
+    border: 2px solid #000;
+    transition: .3s;
+    text-align: center;
+
+    &:hover {
+        border-radius: 20px;
+        transition: .3s;
+        @apply bg-yellow-700;
+    }
+}

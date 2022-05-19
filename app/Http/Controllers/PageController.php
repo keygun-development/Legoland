@@ -19,9 +19,9 @@ class PageController extends Controller
         return view('information',  ['title' => 'Informatie']);
     }
 
-    public function attractiePage()
+    public function attractionPage()
     {
-        return view('attractiesOverview',  ['title' => 'Attracties']);
+        return view('attractionOverview',  ['title' => 'Attracties', 'attractions' => Attraction::all()]);
     }
 
     public function loginPage()
@@ -87,5 +87,10 @@ class PageController extends Controller
     public function attractiondetailPage(Attraction $attraction)
     {
         return view('attractiondetails', ['title' => 'Attractie details', 'attraction' => $attraction]);
+    }
+
+    public function accommodationPage()
+    {
+        return view('accommodation', ['title' => 'Accommodatie']);
     }
 }
