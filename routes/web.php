@@ -34,7 +34,7 @@ Route::post('/inloggen/register', [UserController::class, 'register']);
 
 Route::post('/inloggen/login', [UserController::class, 'login']);
 
-Route::get('/attracties', [PageController::class, 'attractiePage']);
+Route::get('/attracties', [PageController::class, 'attractionPage']);
 
 Route::get('/account/dashboard', [PageController::class, 'accountDashboardPage'])->middleware('auth');
 
