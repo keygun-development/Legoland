@@ -1,124 +1,146 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('pageTitle', 'Admin Ticket')
 @section('content')
-<!-- This is an example component -->
-<div class="max-w-2xl mx-auto">
-
-	<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-		<div class="p-4">
-			<label for="table-search" class="sr-only">Search</label>
-			<div class="relative mt-1">
-				<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-					<svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20"
-						xmlns="http://www.w3.org/2000/svg">
-						<path fill-rule="evenodd"
-							d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-							clip-rule="evenodd"></path>
-					</svg>
-				</div>
-				<input type="text" id="table-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search for items">
+<div class="container flex justify-center mx-auto">
+    <div class="flex flex-col">
+        <div class="w-full">
+            <div class="border-b border-gray-200 shadow">
+                <table class="divide-y divide-gray-300">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-2 text-xs text-gray-500">
+                                ID
+                            </th>
+                            <th class="px-6 py-2 text-xs text-gray-500">
+                                Title
+                            </th>
+                            <th class="px-6 py-2 text-xs text-gray-500">
+                                Description
+                            </th>
+                            <th class="px-6 py-2 text-xs text-gray-500">
+                                Image Url
+                            </th>
+                            <th class="px-6 py-2 text-xs text-gray-500">
+                                Edit
+                            </th>
+                            <th class="px-6 py-2 text-xs text-gray-500">
+                                Delete
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-300">
+                        <tr class="whitespace-nowrap">
+                            <td class="px-6 py-4 text-sm text-gray-500">
+                                1
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="text-sm text-gray-900">
+                                    Jon doe
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="text-sm text-gray-500">
+                                    Description
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-gray-500">
+                                url type beat
+                            </td>
+                            <td class="px-6 py-4">
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-400" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                    </svg>
+                                </a>
+                            </td>
+                            <td class="px-6 py-4">
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-red-400" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                    </svg>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr class="whitespace-nowrap">
+                            <td class="px-6 py-4 text-sm text-gray-500">
+                                2
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="text-sm text-gray-900">
+                                    Han Peters
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="text-sm text-gray-500">
+                                    Description
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-gray-500">
+                                url type beat
+                            </td>
+                            <td class="px-6 py-4">
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-400" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                    </svg>
+                                </a>
+                            </td>
+                            <td class="px-6 py-4">
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-red-400" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                    </svg>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr class="whitespace-nowrap">
+                            <td class="px-6 py-4 text-sm text-gray-500">
+                                3
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="text-sm text-gray-900">
+                                    Alwin Berendsen
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="text-sm text-gray-500">
+                                    Description
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-gray-500">
+                                url type beat
+                            </td>
+                            <td class="px-6 py-4">
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-400" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                    </svg>
+                                </a>
+                            </td>
+                            <td class="px-6 py-4">
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-red-400" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                    </svg>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-			</div>
-			<table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-				<thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-					<tr>
-						<th scope="col" class="p-4">
-							<div class="flex items-center">
-								<input id="checkbox-all-search" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-								<label for="checkbox-all-search" class="sr-only">checkbox</label>
-							</div>
-						</th>
-						<th scope="col" class="px-6 py-3">
-							Product name
-						</th>
-						<th scope="col" class="px-6 py-3">
-							Color
-						</th>
-						<th scope="col" class="px-6 py-3">
-							Category
-						</th>
-						<th scope="col" class="px-6 py-3">
-							Price
-						</th>
-						<th scope="col" class="px-6 py-3">
-							<span class="sr-only">Edit</span>
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr
-						class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-						<td class="w-4 p-4">
-							<div class="flex items-center">
-								<input id="checkbox-table-search-1" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-								<label for="checkbox-table-search-1" class="sr-only">checkbox</label>
-							</div>
-						</td>
-						<th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-							Apple MacBook Pro 17"
-						</th>
-						<td class="px-6 py-4">
-							Sliver
-						</td>
-						<td class="px-6 py-4">
-							Laptop
-						</td>
-						<td class="px-6 py-4">
-							$2999
-						</td>
-						<td class="px-6 py-4 text-right">
-							<a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-						</td>
-					</tr>
-					<tr
-						class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-						<td class="w-4 p-4">
-							<div class="flex items-center">
-								<input id="checkbox-table-search-2" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-								<label for="checkbox-table-search-2" class="sr-only">checkbox</label>
-							</div>
-						</td>
-						<th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-							Microsoft Surface Pro
-						</th>
-						<td class="px-6 py-4">
-							White
-						</td>
-						<td class="px-6 py-4">
-							Laptop PC
-						</td>
-						<td class="px-6 py-4">
-							$1999
-						</td>
-						<td class="px-6 py-4 text-right">
-							<a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-						</td>
-					</tr>
-					<tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
-						<td class="w-4 p-4">
-							<div class="flex items-center">
-								<input id="checkbox-table-search-3" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-								<label for="checkbox-table-search-3" class="sr-only">checkbox</label>
-							</div>
-						</td>
-						<th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-							Magic Mouse 2
-						</th>
-						<td class="px-6 py-4">
-							Black
-						</td>
-						<td class="px-6 py-4">
-							Accessories
-						</td>
-						<td class="px-6 py-4">
-							$99
-						</td>
-						<td class="px-6 py-4 text-right">
-							<a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
+    </div>
+</div>
 @endsection
