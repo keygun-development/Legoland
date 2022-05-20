@@ -84,6 +84,11 @@ class PageController extends Controller
         return view('newsletter', ['title' => 'Nieuwsbrief']);
     }
 
+    public function adminTicketPage()
+    {
+        return view('admin-tickets', ['title' => 'Admin Tickets']);
+    }
+
     public function attractiondetailPage(Attraction $attraction)
     {
         return view('attractiondetails', ['title' => 'Attractie details', 'attraction' => $attraction]);
