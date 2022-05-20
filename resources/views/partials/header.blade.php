@@ -23,11 +23,11 @@
                 <a class="border_under" href="/attracties">
                     Attractie Overview
                 </a>
-                <a class="border_under" href="/cart">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                </a>
                 @if(!auth()->check())
                 <div class="flex items-center">
+                    <a class="border_under" href="/cart">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    </a>
                     <a class="border_under" href="/inloggen">
                         Inloggen
                     </a>

@@ -690,6 +690,10 @@ li {
   list-style-type: disc;
 }
 
+.site-content {
+  min-height: 88.3vh;
+}
+
 @font-face {
   font-family: CeraPro;
   src: url("../fonts/CeraPro-Regular.woff");
@@ -724,6 +728,7 @@ input, textarea {
 }
 .c-header img {
   width: 300px;
+  height: 50px;
 }
 .c-header a {
   font-size: 20px;
@@ -742,8 +747,15 @@ input, textarea {
   background-size: 100% var(--border-width);
 }
 .c-header .c-header__container {
-  width: 1280px;
+  width: 80%;
   margin: 0 auto;
+}
+
+.w-full .items-center {
+  margin-left: 3%;
+}
+.w-full .items-center .border_under:first-of-type {
+  padding-right: 25px;
 }
 
 .c-footer {
