@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Accommodation;
 use App\Models\Attraction;
 use App\Models\Order;
 use App\Models\Ticket;
@@ -91,6 +92,6 @@ class PageController extends Controller
 
     public function accommodationPage()
     {
-        return view('accommodation', ['title' => 'Accommodatie']);
+        return view('accommodation', ['title' => 'Accommodatie', 'accommodations' => Accommodation::all()]);
     }
 }
