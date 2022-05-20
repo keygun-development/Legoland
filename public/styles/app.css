@@ -533,14 +533,26 @@ Ensure the default browser behavior of the `hidden` attribute.
 .ml-auto {
   margin-left: auto;
 }
+.mt-12 {
+  margin-top: 3rem;
+}
+.mt-8 {
+  margin-top: 2rem;
+}
+.mt-2 {
+  margin-top: 0.5rem;
+}
+.mt-6 {
+  margin-top: 1.5rem;
+}
 .mt-4 {
   margin-top: 1rem;
 }
 .mb-4 {
   margin-bottom: 1rem;
 }
-.mt-8 {
-  margin-top: 2rem;
+.box-border {
+  box-sizing: border-box;
 }
 .mt-6 {
   margin-top: 1.5rem;
@@ -592,6 +604,20 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-6 {
   height: 1.5rem;
+.w-full {
+  width: 100%;
+}
+.w-5\/12 {
+  width: 41.666667%;
+}
+.w-6\/12 {
+  width: 50%;
+}
+.w-11\/12 {
+  width: 91.666667%;
+}
+.w-2\/12 {
+  width: 16.666667%;
 }
 .h-full {
   height: 100%;
@@ -632,9 +658,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-7\/12 {
   width: 58.333333%;
 }
-.w-5\/12 {
-  width: 41.666667%;
-}
 .w-3\/12 {
   width: 25%;
 }
@@ -669,6 +692,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .flex-col {
   flex-direction: column;
@@ -757,6 +783,23 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-t {
   border-top-width: 1px;
 }
+.gap-3 {
+  gap: 0.75rem;
+}
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+.rounded-tl-lg {
+  border-top-left-radius: 0.5rem;
+}
+.border-2 {
+  border-width: 2px;
+}
 .border-r-2 {
   border-right-width: 2px;
 }
@@ -766,6 +809,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+.border-solid {
+  border-style: solid;
 }
 .border-black {
   --tw-border-opacity: 1;
@@ -966,6 +1012,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
+.text-\[\#7E7E7E\] {
+  --tw-text-opacity: 1;
+  color: rgb(126 126 126 / var(--tw-text-opacity));
+}
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
@@ -1016,6 +1066,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+.underline {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
 * {
   --border-color-white: #fff;
   --border-width: 5px;
@@ -1026,6 +1080,22 @@ Ensure the default browser behavior of the `hidden` attribute.
 .container {
   max-width: 1080px;
   margin: 0 auto;
+}
+
+li {
+  list-style-type: disc;
+}
+
+.transition {
+  transition: all 0.2s ease-out;
+}
+
+.h-60 {
+  height: 14rem;
+}
+
+.w-128 {
+  width: 32rem;
 }
 
 @font-face {
@@ -1144,6 +1214,19 @@ input, textarea {
 .c-button__account:hover {
   font-weight: bold;
   background-color: #eaeaea;
+}
+
+.c-button__attraction {
+  border-radius: 0;
+  border: 2px solid #000;
+  transition: 0.3s;
+  text-align: center;
+}
+.c-button__attraction:hover {
+  border-radius: 20px;
+  transition: 0.3s;
+  --tw-bg-opacity: 1;
+  background-color: rgb(161 98 7 / var(--tw-bg-opacity));
 }
 
 .c-cart__single {
@@ -1421,4 +1504,9 @@ input, textarea {
   .md\:w-full {
     width: 100%;
   }
+}
+
+.c-image__rounded {
+  border-radius: 14px;
+  border: solid 1px #707070;
 }

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Attraction;
 use App\Models\Order;
 use App\Models\Ticket;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
@@ -17,6 +17,11 @@ class PageController extends Controller
     public function informationPage()
     {
         return view('information',  ['title' => 'Informatie']);
+    }
+
+    public function attractionPage()
+    {
+        return view('attractionOverview',  ['title' => 'Attracties', 'attractions' => Attraction::all()]);
     }
 
     public function loginPage()
@@ -82,5 +87,15 @@ class PageController extends Controller
     public function adminTicketPage()
     {
         return view('admin-tickets', ['title' => 'Admin Tickets']);
+    }
+
+    public function attractiondetailPage(Attraction $attraction)
+    {
+        return view('attractiondetails', ['title' => 'Attractie details', 'attraction' => $attraction]);
+    }
+
+    public function accommodationPage()
+    {
+        return view('accommodation', ['title' => 'Accommodatie']);
     }
 }
