@@ -3,11 +3,11 @@
         {{ $accommodation->title }}
     </p>
     <p class="swiper-no-overflow mt-4">
-        {{ $accommodation->shortDescription }}
+        {{ $accommodation->description }}
     </p>
     <p class="my-4">
         {{-- image wordt verplaatst na werkend backend --}}
-        <img src="{{ $accommodation->imageUrl }}">
+        <img src="{{ asset($accommodation->imageUrl) }}">
     </p>
     <p class="my-4">
         €{{ $accommodation->price }}
