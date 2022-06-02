@@ -94,4 +94,9 @@ class PageController extends Controller
     {
         return view('accommodation', ['title' => 'Accommodatie', 'accommodations' => Accommodation::all()]);
     }
+
+    public function accommodationdetailPage(Accommodation $accommodation)
+    {
+        return view('accommodationdetails', ['title' => 'Accommodatie details', 'accommodation' => $accommodation]);
+    }
 }

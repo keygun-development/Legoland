@@ -50,4 +50,9 @@ class Ticket extends Model
             return null;
         }
     }
+
+    public function getType(): string
+    {
+        return 'ticket';
+    }
 }
