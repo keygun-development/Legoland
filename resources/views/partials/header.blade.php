@@ -1,3 +1,4 @@
+<script src="https://unpkg.com/vue@3"></script>
 <div class="c-header">
     <div class="c-header__container">
         <div class="w-full flex items-end p-4">
@@ -50,3 +51,10 @@
         </div>
     </div>
 </div>
+<script>
+  Vue.component("v-dropdown", require("components/v-dropdown.vue"));
+
+  new Vue({
+    el: "#app",
+  });
+</script>

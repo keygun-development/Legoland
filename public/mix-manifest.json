@@ -3,6 +3,7 @@
     "/js/manifest.js": "/js/manifest.js",
     "/styles/app.css": "/styles/app.css",
     "/js/vendor.js": "/js/vendor.js",
+    "/images/achtbaan.jpg": "/images/achtbaan.jpg",
     "/images/favicon.ico": "/images/favicon.ico",
     "/images/free.png": "/images/free.png",
     "/images/hotelkamer.jpg": "/images/hotelkamer.jpg",
@@ -43,6 +44,5 @@
     "/fonts/CeraPro-Thin.woff": "/fonts/CeraPro-Thin.woff",
     "/fonts/CeraPro-ThinItalic.eot": "/fonts/CeraPro-ThinItalic.eot",
     "/fonts/CeraPro-ThinItalic.ttf": "/fonts/CeraPro-ThinItalic.ttf",
-    "/fonts/CeraPro-ThinItalic.woff": "/fonts/CeraPro-ThinItalic.woff",
-    "/images/achtbaan.jpg": "/images/achtbaan.jpg"
+    "/fonts/CeraPro-ThinItalic.woff": "/fonts/CeraPro-ThinItalic.woff"
 }
