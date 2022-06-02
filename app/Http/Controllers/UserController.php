@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Newsletter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,6 +19,15 @@ class UserController extends Controller
             $newUser->email = $request->email;
             $newUser->password = bcrypt($request->password);
             $newUser->save();
+
+            $NewsletterIsChecked = request('newsletter');
+            if ($NewsletterIsChecked == 'on') {
+                $newNewsletter = new Newsletter();
+            $newNewsletter->name = $request->name;
+            $newNewsletter->email = $request->email;
+            $newNewsletter->save();
+            }
+
             return redirect('/account/dashboard')->with('success', 'Bedankt voor uw registratie.');
         }
     }

@@ -32,6 +32,10 @@
                 <div class="mt-4">
                     <input type="password" name="password" placeholder="Wachtwoord" />
                 </div>
+                <div class="mt-4">
+                    <input name="newsletter" type="checkbox">
+                    <label class="newsletterRegister"> sign up for the newsletter</label>
+                </div>
                 <div class="mt-4 flex items-center justify-center">
                     <input type="submit" class="c-button c-button__default cursor-pointer" value="Registreren" />
                 </div>
