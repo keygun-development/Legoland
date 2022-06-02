@@ -89,6 +89,18 @@ class PageController extends Controller
     {
         return view('admin-tickets', ['title' => 'Admin Tickets']);
     }
+    public function adminAccountPage()
+    {
+        return view('admin-account', ['title' => 'Admin Accounts']);
+    }
+    public function adminAccomodatiesPage()
+    {
+        return view('admin-accomodaties', ['title' => 'Admin Accomodaties']);
+    }
+    public function adminActractiesPage()
+    {
+        return view('admin-attracties', ['title' => 'Admin Actracties']);
+    }
 
     public function attractiondetailPage(Attraction $attraction)
     {
