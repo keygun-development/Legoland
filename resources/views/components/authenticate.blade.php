@@ -12,6 +12,13 @@
                 <div class="mt-4">
                     <input type="password" name="password" placeholder="Wachtwoord" />
                 </div>
+                <div>
+                    @if (session('errorLogin'))
+                        <p class="text-red-500">
+                            {{ session('errorLogin') }}
+                        </p>
+                    @endif
+                </div>
                 <div class="mt-4">
                     <input type="submit" class="c-button c-button__default cursor-pointer" value="Inloggen" />
                 </div>
@@ -32,15 +39,17 @@
                 <div class="mt-4">
                     <input type="password" name="password" placeholder="Wachtwoord" />
                 </div>
+                <div>
+                    @if (session('errorRegister'))
+                        <p class="text-red-500">
+                            {{ session('errorRegister') }}
+                        </p>
+                    @endif
+                </div>
                 <div class="mt-4 flex items-center justify-center">
                     <input type="submit" class="c-button c-button__default cursor-pointer" value="Registreren" />
                 </div>
             </form>
         </div>
     </div>
-    @if (session('error'))
-        <p class="text-red-500">
-            {{ session('error') }}
-        </p>
-    @endif
 </div>
