@@ -31,20 +31,12 @@
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                 </a>
                 @if(!auth()->check())
-                <div class="flex items-center">
-                    <a class="border_under" href="/inloggen">
-                        Inloggen
-                    </a>
-                    <p class="mx-4">
-                        |
-                    </p>
-                    <a class="border_under" href="/inloggen">
-                        Registreren
-                    </a>
-                </div>
+                <a class="border_under" href="/inloggen">
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                </a>
                 @else
-                    <a class="border_under" href="/account/dashboard">
-                        <i class="fas fa-user"></i>
+                <a class="border_under" href="/account/dashboard">
+                    <i class="fa fa-solid fa-users-gear"></i>
                     </a>
                 @endif
             </div>
