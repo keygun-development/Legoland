@@ -7,11 +7,19 @@
         </h1>
         <div class="c-cart">
             @php($total = 0)
-            @if($products)
-                @for($i = 0; $i<count($amount); $i++)
-                    @include('components/cart-single-product', ['ticket' => $products[$i], 'amount' => $amount[$i]])
-                    @php($total += $products[$i]->price*$amount[$i])
-                @endfor
+            @if($tickets || $accommodations)
+                @if($tickets)
+                    @for($i = 0; $i<count($ticketAmount); $i++)
+                        @include('components/cart-single-product', ['ticket' => $tickets[$i], 'amount' => $ticketAmount[$i]])
+                        @php($total += $tickets[$i]->price*$ticketAmount[$i])
+                    @endfor
+                @endif
+                @if($accommodations)
+                    @for($i = 0; $i<count($accommodationAmount); $i++)
+                        @include('components/cart-single-product', ['ticket' => $accommodations[$i], 'amount' => $accommodationAmount[$i]])
+                        @php($total += $accommodations[$i]->price*$accommodationAmount[$i])
+                    @endfor
+                @endif
             @else
                 <div class="c-cart__single">
                     <p>

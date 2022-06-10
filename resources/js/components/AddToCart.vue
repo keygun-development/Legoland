@@ -22,8 +22,9 @@ export default {
     },
 
     props: {
-      itemId: Number,
-      itemAmount: String
+        itemId: Number,
+        itemAmount: String,
+        itemType: String
     },
 
     methods: {
@@ -31,8 +32,10 @@ export default {
             this.error = ""
             this.success = ""
 
+            console.log(this.itemId);
+
             const cookieObj = new URLSearchParams(document.cookie.replaceAll("; ","&"))
-            let ticketList = JSON.parse(cookieObj.get("tickets")) || [];
+            let ticketList = JSON.parse(cookieObj.get(this.itemType)) || [];
             let duplicate = false;
             const amount = document.getElementById(this.itemAmount)
 
@@ -50,9 +53,9 @@ export default {
 
                 if (!duplicate) {
                     ticketList.push({"id":this.itemId,"amount":amount.value})
-                    this.setCookie('tickets', JSON.stringify(ticketList), 7);
+                    this.setCookie(this.itemType, JSON.stringify(ticketList), 7);
                 } else {
-                    this.setCookie('tickets', JSON.stringify(ticketList), 7);
+                    this.setCookie(this.itemType, JSON.stringify(ticketList), 7);
                 }
 
                 this.success = "Product toegevoegd!"
@@ -68,8 +71,6 @@ export default {
             }
             document.cookie = name + "=" + (value || "")  + expires + "; path=/";
         }
-
-
     }
 }
 </script>

@@ -13,14 +13,22 @@
                 U ontvangt de tickets per mail direct na de aankoop. Vandaar dat wij uw mailadres nodig hebben.
             </p>
             @php($total = 0)
-            @if($amount)
+            @if($ticketAmount || $accommodationAmount)
                 <h2>
                     Producten:
                 </h2>
-                @for($i = 0; $i<count($amount); $i++)
-                    @include('components/cart-single-product', ['ticket' => $products[$i], 'amount' => $amount[$i]])
-                    @php($total += $products[$i]->price*$amount[$i])
-                @endfor
+                @if($ticketAmount)
+                    @for($i = 0; $i<count($ticketAmount); $i++)
+                        @include('components/cart-single-product', ['ticket' => $tickets[$i], 'amount' => $ticketAmount[$i]])
+                        @php($total += $tickets[$i]->price*$ticketAmount[$i])
+                    @endfor
+                @endif
+                @if($accommodationAmount)
+                    @for($i = 0; $i<count($accommodationAmount); $i++)
+                        @include('components/cart-single-product', ['ticket' => $accommodations[$i], 'amount' => $accommodationAmount[$i]])
+                        @php($total += $accommodations[$i]->price*$accommodationAmount[$i])
+                    @endfor
+                @endif
                 <update-cart class="mt-4">
                 </update-cart>
                 @if(!auth()->check())

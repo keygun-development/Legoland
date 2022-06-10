@@ -20,14 +20,16 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: {
     itemId: Number,
-    itemAmount: String
+    itemAmount: String,
+    itemType: String
   },
   methods: {
     addItems: function addItems() {
       this.error = "";
       this.success = "";
+      console.log(this.itemId);
       var cookieObj = new URLSearchParams(document.cookie.replaceAll("; ", "&"));
-      var ticketList = JSON.parse(cookieObj.get("tickets")) || [];
+      var ticketList = JSON.parse(cookieObj.get(this.itemType)) || [];
       var duplicate = false;
       var amount = document.getElementById(this.itemAmount);
 
@@ -48,9 +50,9 @@ __webpack_require__.r(__webpack_exports__);
             "id": this.itemId,
             "amount": amount.value
           });
-          this.setCookie('tickets', JSON.stringify(ticketList), 7);
+          this.setCookie(this.itemType, JSON.stringify(ticketList), 7);
         } else {
-          this.setCookie('tickets', JSON.stringify(ticketList), 7);
+          this.setCookie(this.itemType, JSON.stringify(ticketList), 7);
         }
 
         this.success = "Product toegevoegd!";
@@ -135,15 +137,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   methods: {
     updateCart: function updateCart() {
-      var products = document.getElementsByClassName('c-cart__single');
       var cookieObj = new URLSearchParams(document.cookie.replaceAll("; ", "&"));
       var ticketList = JSON.parse(cookieObj.get("tickets")) || [];
-      var productObject = [];
+      var accommodationList = JSON.parse(cookieObj.get("accommodations")) || [];
+      var ticketObject = [];
+      var accommodationObject = [];
 
-      for (var i = 0; i < products.length; i++) {
+      for (var i = 0; i < ticketList.length; i++) {
         if (ticketList[i].id === parseInt(document.getElementById(ticketList[i].id).id)) {
           if (parseInt(document.getElementById(ticketList[i].id).value) !== 0) {
-            productObject.push({
+            ticketObject.push({
               "id": ticketList[i].id,
               "amount": document.getElementById(ticketList[i].id).value
             });
@@ -151,7 +154,19 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      this.setCookie('tickets', JSON.stringify(productObject), 7);
+      for (var _i = 0; _i < accommodationList.length; _i++) {
+        if (accommodationList[_i].id === parseInt(document.getElementById(accommodationList[_i].id).id)) {
+          if (parseInt(document.getElementById(accommodationList[_i].id).value) !== 0) {
+            accommodationObject.push({
+              "id": accommodationList[_i].id,
+              "amount": document.getElementById(accommodationList[_i].id).value
+            });
+          }
+        }
+      }
+
+      this.setCookie('tickets', JSON.stringify(ticketObject), 7);
+      this.setCookie('accommodations', JSON.stringify(accommodationObject), 7);
       location.reload();
     },
     setCookie: function setCookie(name, value, days) {

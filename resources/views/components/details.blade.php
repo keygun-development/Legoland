@@ -39,15 +39,18 @@
                 </p>
             </div>
             <add-to-cart
-                :item-id="{{ $post->id }}"
+                :item-id="{{ $item->getId() }}"
                 :item-amount="'amount'"
-                :item-type="{{ $post->getType() }}"
+                :item-type="'{{ $item->getType() }}'"
                 ref="childRef"
             >
                 <template v-slot:items>
-                    <button v-on:click="$refs.childRef.addItems()" class="c-button c-button__default mt-4">
-                        Toevoegen aan <i class="fa fa-shopping-cart"></i>
-                    </button>
+                    <div class="flex flex-col w-4/12">
+                        <input value="1" id="amount" type="number" />
+                        <button v-on:click="$refs.childRef.addItems()" class="c-button c-button__default mt-4">
+                            Toevoegen aan <i class="fa fa-shopping-cart"></i>
+                        </button>
+                    </div>
                 </template>
             </add-to-cart>
         @endif
