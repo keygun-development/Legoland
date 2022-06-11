@@ -6,6 +6,7 @@ use App\Models\Accommodation;
 use App\Models\Attraction;
 use App\Models\Order;
 use App\Models\Ticket;
+use App\Models\Cart;
 use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
@@ -55,9 +56,9 @@ class PageController extends Controller
         return view('orderdetail',  ['order' => $order]);
     }
 
-    public function cartPage(Ticket $ticket, Accommodation $accommodation)
+    public function cartPage(Cart $cart)
     {
-        return view('cart', ['title' => 'Winkelmandje', 'tickets' => $ticket->getSelectedTickets(), 'ticketAmount' => $ticket->getTicketAmounts(), 'accommodations' => $accommodation->getSelectedAccommodations(), 'accommodationAmount' => $accommodation->getAccommodationAmounts()]);
+        return view('cart', ['title' => 'Winkelmandje', 'products' => $cart->getSelectedProducts(), 'amount' => $cart->getProductAmounts()]);
     }
 
     public function checkoutPage(Ticket $ticket, Accommodation $accommodation)

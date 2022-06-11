@@ -50,40 +50,12 @@ class Accommodation extends ModelAbstract
         return $this->details;
     }
 
-    public function getSelectedAccommodations(): ?array
-    {
-        if(isset($_COOKIE[$this->getType()])) {
-            $getaccommodations = json_decode($_COOKIE[$this->getType()]);
-            $accommodations = [];
-            foreach ($getaccommodations as $acc) {
-                array_push($accommodations, Accommodation::find($acc->id));
-            }
-            return $accommodations;
-        } else {
-            return null;
-        }
-    }
-
-    public function getAccommodationAmounts(): ?array
-    {
-        if(isset($_COOKIE[$this->getType()])) {
-            $getaccommodations = json_decode($_COOKIE[$this->getType()]);
-            $accommodations = [];
-            foreach ($getaccommodations as $acc) {
-                array_push($accommodations, $acc->amount);
-            }
-            return $accommodations;
-        } else {
-            return null;
-        }
-    }
-
     public function getPrice(): string
     {
         return $this->price;
     }
 
-    public function getType(): string
+    public static function getType(): string
     {
         return 'accommodations';
     }

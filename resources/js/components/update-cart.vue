@@ -9,36 +9,28 @@
 <script>
 
 export default {
+
     methods: {
         updateCart: function () {
             const cookieObj = new URLSearchParams(document.cookie.replaceAll("; ", "&"))
-            let ticketList = JSON.parse(cookieObj.get("tickets")) || [];
-            let accommodationList = JSON.parse(cookieObj.get("accommodations")) || [];
-            let ticketObject = [];
-            let accommodationObject = [];
+            let productList = JSON.parse(cookieObj.get("producten")) || [];
+            let productObject = [];
+            const elements = document.getElementsByClassName('product-amount')
 
-            for (let i = 0; i < ticketList.length; i++) {
-                if (ticketList[i].id === parseInt(document.getElementById(ticketList[i].id).id)) {
-                    if (parseInt(document.getElementById(ticketList[i].id).value) !== 0) {
-                        ticketObject.push({
-                            "id": ticketList[i].id,
-                            "amount": document.getElementById(ticketList[i].id).value
+            for (let i = 0; i < productList.length; i++) {
+                if (productList[i].id === parseInt(document.getElementById(productList[i].id).id) &&
+                    elements[i].getAttribute('data-type') === productList[i].type
+                ) {
+                    if (parseInt(document.getElementById(productList[i].id).value) !== 0) {
+                        productObject.push({
+                            "id": productList[i].id,
+                            "amount": elements[i].value,
+                            "type": productList[i].type
                         })
                     }
                 }
             }
-            for (let i = 0; i < accommodationList.length; i++) {
-                if (accommodationList[i].id === parseInt(document.getElementById(accommodationList[i].id).id)) {
-                    if (parseInt(document.getElementById(accommodationList[i].id).value) !== 0) {
-                        accommodationObject.push({
-                            "id": accommodationList[i].id,
-                            "amount": document.getElementById(accommodationList[i].id).value
-                        })
-                    }
-                }
-            }
-            this.setCookie('tickets', JSON.stringify(ticketObject), 7);
-            this.setCookie('accommodations', JSON.stringify(accommodationObject), 7);
+            this.setCookie('producten', JSON.stringify(productObject), 7);
             location.reload();
         },
 
