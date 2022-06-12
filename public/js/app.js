@@ -143,6 +143,8 @@ __webpack_require__.r(__webpack_exports__);
       var elements = document.getElementsByClassName('product-amount');
 
       for (var i = 0; i < productList.length; i++) {
+        console.log(productList[i].id, parseInt(document.getElementById(productList[i].id).id));
+
         if (productList[i].id === parseInt(document.getElementById(productList[i].id).id) && elements[i].getAttribute('data-type') === productList[i].type) {
           if (parseInt(document.getElementById(productList[i].id).value) !== 0) {
             productObject.push({

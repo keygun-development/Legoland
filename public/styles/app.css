@@ -781,8 +781,6 @@ input, textarea {
 .c-button__attraction:hover {
   border-radius: 20px;
   transition: 0.3s;
-  --tw-bg-opacity: 1;
-  background-color: rgb(161 98 7 / var(--tw-bg-opacity));
 }
 
 .c-cart__single {

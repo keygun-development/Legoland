@@ -61,9 +61,9 @@ class PageController extends Controller
         return view('cart', ['title' => 'Winkelmandje', 'products' => $cart->getSelectedProducts(), 'amount' => $cart->getProductAmounts()]);
     }
 
-    public function checkoutPage(Ticket $ticket, Accommodation $accommodation)
+    public function checkoutPage(Cart $cart)
     {
-        return view('checkout', ['title' => 'Afrekenen', 'tickets' => $ticket->getSelectedTickets(), 'ticketAmount' => $ticket->getTicketAmounts(), 'accommodations' => $accommodation->getSelectedAccommodations(), 'accommodationAmount' => $accommodation->getAccommodationAmounts()]);
+        return view('checkout', ['title' => 'Afrekenen', 'products' => $cart->getSelectedProducts(), 'amount' => $cart->getProductAmounts()]);
     }
 
     public function completePage(MollieWebhookController $order)

@@ -1,15 +1,15 @@
 <h1 class="mt-12">
-    {{ $item->getName() }}
+    {{ $item->name }}
 </h1>
 <div class="flex w-full justify-between mt-8">
     <div class="w-5/12">
-        <img class="c-image__rounded" src="{{ $item->getImageUrl() }}" />
+        <img class="c-image__rounded" src="{{ $item->imageUrl }}" />
     </div>
     <div class="w-6/12">
         <h2>
             Beschrijving
         </h2>
-        {{ $item->getDescription() }}
+        {{ $item->description }}
 
         @if($details)
             <div class="box-border">
@@ -32,14 +32,14 @@
         @if($item->price)
             <div class="flex items-end">
                 <h2>
-                    €{{ $item->getPrice() }}
+                    €{{ $item->price }}
                 </h2>
                 <p class="ml-2">
                     Per persoon Per nacht
                 </p>
             </div>
             <add-to-cart
-                :item-id="{{ $item->getId() }}"
+                :item-id="{{ $item->id }}"
                 :item-amount="'amount'"
                 :item-type="'{{ $item->getType() }}'"
                 ref="childRef"

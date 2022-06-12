@@ -18,6 +18,7 @@ export default {
             const elements = document.getElementsByClassName('product-amount')
 
             for (let i = 0; i < productList.length; i++) {
+                console.log(productList[i].id, parseInt(document.getElementById(productList[i].id).id))
                 if (productList[i].id === parseInt(document.getElementById(productList[i].id).id) &&
                     elements[i].getAttribute('data-type') === productList[i].type
                 ) {

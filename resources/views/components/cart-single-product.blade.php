@@ -1,13 +1,13 @@
 <div class="c-cart__single">
     <p class="font-bold">
-        {{ $ticket->getName() }}
+        {{ $ticket->name }}
     </p>
     <p class="swiper-no-overflow mt-4">
-        {{ $ticket->getDescription() }}
+        {{ $ticket->description }}
     </p>
     <p class="my-4">
-        €{{ $ticket->getPrice() }}
+        €{{ $ticket->price }}
     </p>
     Aantal:
-    <input class="product-amount" type="number" value="{{ $amount }}" id="{{ $ticket->getId() }}" data-type="{{ $ticket->getType() }}" />
+    <input class="product-amount" type="number" value="{{ $amount }}" id="{{ $ticket->id }}" data-type="{{ $ticket->getType() }}" />
 </div>

@@ -16,7 +16,7 @@
                         <p class="mt-2">{{ $attraction->description }}</p>
                         <div class="flex space-x-2 mt-6 w-full">
                             <a href="/attracties/{{ $attraction->id }}" class="c-button c-button__default c-button__attraction w-11/12">
-                                More info
+                                Meer informatie
                             </a>
                         </div>
                         <br>
