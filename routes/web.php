@@ -72,3 +72,5 @@ Route::post('/betalen/send', [MollieWebhookController::class, 'checkout'])->name
 Route::get('/order', [PageController::class, 'completePage']);
 
 Route::get('/attracties/{attraction:id}', [PageController::class, 'attractiondetailPage']);
+
+Route::get('/accommodation/{accommodation:id}', [PageController::class, 'accommodationdetailPage']);

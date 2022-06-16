@@ -539,6 +539,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-4 {
   margin-bottom: 1rem;
 }
+.mt-8 {
+  margin-top: 2rem;
+}
+.mt-12 {
+  margin-top: 3rem;
+}
+.ml-2 {
+  margin-left: 0.5rem;
+}
 .box-border {
   box-sizing: border-box;
 }
@@ -607,6 +616,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-7\/12 {
   width: 58.333333%;
+}
+.w-5\/12 {
+  width: 41.666667%;
 }
 .w-3\/12 {
   width: 25%;
@@ -1064,8 +1076,6 @@ input, textarea {
 .c-button__attraction:hover {
   border-radius: 20px;
   transition: 0.3s;
-  --tw-bg-opacity: 1;
-  background-color: rgb(161 98 7 / var(--tw-bg-opacity));
 }
 
 .c-cart__single {
