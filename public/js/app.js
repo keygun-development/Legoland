@@ -430,13 +430,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _AddToCart_vue_vue_type_template_id_2e1e1c61__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AddToCart.vue?vue&type=template&id=2e1e1c61 */ "./resources/js/components/AddToCart.vue?vue&type=template&id=2e1e1c61");
 /* harmony import */ var _AddToCart_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AddToCart.vue?vue&type=script&lang=js */ "./resources/js/components/AddToCart.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_Gebruiker_Desktop_PHP_project_Legoland_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_cdusseldorp_Documents_GitHub_Legoland_Dash_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_Gebruiker_Desktop_PHP_project_Legoland_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AddToCart_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AddToCart_vue_vue_type_template_id_2e1e1c61__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/AddToCart.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_cdusseldorp_Documents_GitHub_Legoland_Dash_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AddToCart_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AddToCart_vue_vue_type_template_id_2e1e1c61__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/AddToCart.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -457,13 +457,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _OpenCloseModal_vue_vue_type_template_id_d4462dac__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./OpenCloseModal.vue?vue&type=template&id=d4462dac */ "./resources/js/components/OpenCloseModal.vue?vue&type=template&id=d4462dac");
 /* harmony import */ var _OpenCloseModal_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./OpenCloseModal.vue?vue&type=script&lang=js */ "./resources/js/components/OpenCloseModal.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_Gebruiker_Desktop_PHP_project_Legoland_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_cdusseldorp_Documents_GitHub_Legoland_Dash_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_Gebruiker_Desktop_PHP_project_Legoland_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_OpenCloseModal_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_OpenCloseModal_vue_vue_type_template_id_d4462dac__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/OpenCloseModal.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_cdusseldorp_Documents_GitHub_Legoland_Dash_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_OpenCloseModal_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_OpenCloseModal_vue_vue_type_template_id_d4462dac__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/OpenCloseModal.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -484,13 +484,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Swiper_vue_vue_type_template_id_d3ab4aba__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Swiper.vue?vue&type=template&id=d3ab4aba */ "./resources/js/components/Swiper.vue?vue&type=template&id=d3ab4aba");
 /* harmony import */ var _Swiper_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Swiper.vue?vue&type=script&lang=js */ "./resources/js/components/Swiper.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_Gebruiker_Desktop_PHP_project_Legoland_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_cdusseldorp_Documents_GitHub_Legoland_Dash_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_Gebruiker_Desktop_PHP_project_Legoland_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Swiper_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Swiper_vue_vue_type_template_id_d3ab4aba__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Swiper.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_cdusseldorp_Documents_GitHub_Legoland_Dash_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Swiper_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Swiper_vue_vue_type_template_id_d3ab4aba__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Swiper.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -511,13 +511,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _update_cart_vue_vue_type_template_id_06dc4aa9__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./update-cart.vue?vue&type=template&id=06dc4aa9 */ "./resources/js/components/update-cart.vue?vue&type=template&id=06dc4aa9");
 /* harmony import */ var _update_cart_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./update-cart.vue?vue&type=script&lang=js */ "./resources/js/components/update-cart.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_Gebruiker_Desktop_PHP_project_Legoland_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_cdusseldorp_Documents_GitHub_Legoland_Dash_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_Gebruiker_Desktop_PHP_project_Legoland_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_update_cart_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_update_cart_vue_vue_type_template_id_06dc4aa9__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/update-cart.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_cdusseldorp_Documents_GitHub_Legoland_Dash_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_update_cart_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_update_cart_vue_vue_type_template_id_06dc4aa9__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/update-cart.vue"]])
 /* hot reload */
 if (false) {}
 

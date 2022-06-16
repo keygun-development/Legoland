@@ -5,10 +5,11 @@
         <h1>
             {{ $title }}
         </h1>
-        <div class="grid grid-cols-4 gap-4">
+        <div class="grid grid-cols-2 gap-4">
             @foreach($accommodations as $accommodation)
                 @include('components.card-single-accommodation', ['accommodation' => $accommodation])
             @endforeach
         </div>
     </div>
 @endsection
+
