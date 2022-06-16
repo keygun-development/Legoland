@@ -34,6 +34,8 @@ Route::post('/inloggen/register', [UserController::class, 'register']);
 
 Route::post('/inloggen/login', [UserController::class, 'login']);
 
+Route::get('/attracties', [PageController::class, 'attractionPage']);
+
 Route::get('/account/dashboard', [PageController::class, 'accountDashboardPage'])->middleware('auth');
 
 Route::get('/account/orders', [PageController::class, 'accountOrdersPage'])->middleware('auth');
@@ -58,10 +60,15 @@ Route::post('/contact/send', [ContactController::class, 'store']);
 
 Route::get('/accommodation', [PageController::class, 'accommodationPage']);
 
-Route::get('/payments/webhook/', [MollieWebhookController::Class => 'handle'])->name('/payments/webhook/');
+Route::get(' /admin-tickets', [PageController::class, 'adminTicketPage']);
+Route::get(' /admin-accounts', [PageController::class, 'adminAccountPage']);
+Route::get(' /admin-accomodaties', [PageController::class, 'adminAccomodatiesPage']);
+Route::get(' /admin-attracties', [PageController::class, 'adminActractiesPage']);
 
-Route::post('/betalen/send', [MollieWebhookController::Class, 'checkout'])->name('/betalen/send');
+Route::get('/payments/webhook/', [MollieWebhookController::class => 'handle'])->name('/payments/webhook/');
+
+Route::post('/betalen/send', [MollieWebhookController::class, 'checkout'])->name('/betalen/send');
 
 Route::get('/order', [PageController::class, 'completePage']);
 
-
+Route::get('/attracties/{attraction:id}', [PageController::class, 'attractiondetailPage']);
