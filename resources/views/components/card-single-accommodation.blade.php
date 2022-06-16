@@ -1,6 +1,6 @@
 <div class="c-card__single">
     <p class="font-bold">
-        {{ $accommodation->title }}
+        {{ $accommodation->name }}
     </p>
     <p class="swiper-no-overflow mt-4">
         {{ $accommodation->description }}

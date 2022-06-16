@@ -25,6 +25,7 @@
                 <add-to-cart
                     :item-id="{{ $post->id }}"
                     :item-amount="'amount'"
+                    :item-type="'{{ $post->getType() }}'"
                     ref="childRef"
                 >
                     <template v-slot:items>

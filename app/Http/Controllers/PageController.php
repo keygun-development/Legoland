@@ -6,6 +6,7 @@ use App\Models\Accommodation;
 use App\Models\Attraction;
 use App\Models\Order;
 use App\Models\Ticket;
+use App\Models\Cart;
 use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
@@ -55,14 +56,14 @@ class PageController extends Controller
         return view('orderdetail',  ['order' => $order]);
     }
 
-    public function cartPage(Ticket $ticket)
+    public function cartPage(Cart $cart)
     {
-        return view('cart', ['title' => 'Winkelmandje', 'products' => $ticket->getSelectedTickets(), 'amount' => $ticket->getTicketAmounts()]);
+        return view('cart', ['title' => 'Winkelmandje', 'products' => $cart->getSelectedProducts(), 'amount' => $cart->getProductAmounts()]);
     }
 
-    public function checkoutPage(Ticket $ticket)
+    public function checkoutPage(Cart $cart)
     {
-        return view('checkout', ['title' => 'Afrekenen', 'products' => $ticket->getSelectedTickets(), 'amount' => $ticket->getTicketAmounts()]);
+        return view('checkout', ['title' => 'Afrekenen', 'products' => $cart->getSelectedProducts(), 'amount' => $cart->getProductAmounts()]);
     }
 
     public function completePage(MollieWebhookController $order)
@@ -110,5 +111,10 @@ class PageController extends Controller
     public function accommodationPage()
     {
         return view('accommodation', ['title' => 'Accommodatie', 'accommodations' => Accommodation::all()]);
+    }
+
+    public function accommodationdetailPage(Accommodation $accommodation)
+    {
+        return view('accommodationdetails', ['title' => 'Accommodatie details', 'accommodation' => $accommodation]);
     }
 }

@@ -9,21 +9,29 @@
 <script>
 
 export default {
+
     methods: {
         updateCart: function () {
-            const products = document.getElementsByClassName('c-cart__single');
-            const cookieObj = new URLSearchParams(document.cookie.replaceAll("; ","&"))
-            let ticketList = JSON.parse(cookieObj.get("tickets")) || [];
+            const cookieObj = new URLSearchParams(document.cookie.replaceAll("; ", "&"))
+            let productList = JSON.parse(cookieObj.get("producten")) || [];
             let productObject = [];
+            const elements = document.getElementsByClassName('product-amount')
 
-            for (let i = 0; i<products.length; i++) {
-                if (ticketList[i].id === parseInt(document.getElementById(ticketList[i].id).id)) {
-                    if(parseInt(document.getElementById(ticketList[i].id).value) !== 0) {
-                        productObject.push({"id":ticketList[i].id,"amount":document.getElementById(ticketList[i].id).value})
+            for (let i = 0; i < productList.length; i++) {
+                console.log(productList[i].id, parseInt(document.getElementById(productList[i].id).id))
+                if (productList[i].id === parseInt(document.getElementById(productList[i].id).id) &&
+                    elements[i].getAttribute('data-type') === productList[i].type
+                ) {
+                    if (parseInt(document.getElementById(productList[i].id).value) !== 0) {
+                        productObject.push({
+                            "id": productList[i].id,
+                            "amount": elements[i].value,
+                            "type": productList[i].type
+                        })
                     }
                 }
             }
-            this.setCookie('tickets', JSON.stringify(productObject), 7);
+            this.setCookie('producten', JSON.stringify(productObject), 7);
             location.reload();
         },
 

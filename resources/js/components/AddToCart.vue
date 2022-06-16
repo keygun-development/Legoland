@@ -22,8 +22,9 @@ export default {
     },
 
     props: {
-      itemId: Number,
-      itemAmount: String
+        itemId: Number,
+        itemAmount: String,
+        itemType: String
     },
 
     methods: {
@@ -32,27 +33,31 @@ export default {
             this.success = ""
 
             const cookieObj = new URLSearchParams(document.cookie.replaceAll("; ","&"))
-            let ticketList = JSON.parse(cookieObj.get("tickets")) || [];
+            let orderList = JSON.parse(cookieObj.get('producten')) || [];
             let duplicate = false;
             const amount = document.getElementById(this.itemAmount)
 
             if (!amount.value || parseInt(amount.value) === 0) {
                 this.error = "Geef een getal op tussen de 1 en 10"
             } else {
-                if (ticketList.length > 0) {
-                    for (let i=0; i<ticketList.length; i++) {
-                        if(ticketList[i].id === this.itemId) {
-                            ticketList[i].amount = (parseInt(ticketList[i].amount) + parseInt(amount.value))
+                if (orderList.length > 0) {
+                    for (let i=0; i<orderList.length; i++) {
+                        if (orderList[i].id === this.itemId && orderList[i].type === this.itemType) {
+                            orderList[i].amount = (parseInt(orderList[i].amount) + parseInt(amount.value))
                             duplicate = true
                         }
                     }
                 }
 
                 if (!duplicate) {
-                    ticketList.push({"id":this.itemId,"amount":amount.value})
-                    this.setCookie('tickets', JSON.stringify(ticketList), 7);
+                    orderList.push({
+                        "id":this.itemId,
+                        "amount":amount.value,
+                        "type":this.itemType
+                    })
+                    this.setCookie('producten', JSON.stringify(orderList), 7);
                 } else {
-                    this.setCookie('tickets', JSON.stringify(ticketList), 7);
+                    this.setCookie('producten', JSON.stringify(orderList), 7);
                 }
 
                 this.success = "Product toegevoegd!"
@@ -68,8 +73,6 @@ export default {
             }
             document.cookie = name + "=" + (value || "")  + expires + "; path=/";
         }
-
-
     }
 }
 </script>

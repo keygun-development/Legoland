@@ -20,37 +20,39 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: {
     itemId: Number,
-    itemAmount: String
+    itemAmount: String,
+    itemType: String
   },
   methods: {
     addItems: function addItems() {
       this.error = "";
       this.success = "";
       var cookieObj = new URLSearchParams(document.cookie.replaceAll("; ", "&"));
-      var ticketList = JSON.parse(cookieObj.get("tickets")) || [];
+      var orderList = JSON.parse(cookieObj.get('producten')) || [];
       var duplicate = false;
       var amount = document.getElementById(this.itemAmount);
 
       if (!amount.value || parseInt(amount.value) === 0) {
         this.error = "Geef een getal op tussen de 1 en 10";
       } else {
-        if (ticketList.length > 0) {
-          for (var i = 0; i < ticketList.length; i++) {
-            if (ticketList[i].id === this.itemId) {
-              ticketList[i].amount = parseInt(ticketList[i].amount) + parseInt(amount.value);
+        if (orderList.length > 0) {
+          for (var i = 0; i < orderList.length; i++) {
+            if (orderList[i].id === this.itemId && orderList[i].type === this.itemType) {
+              orderList[i].amount = parseInt(orderList[i].amount) + parseInt(amount.value);
               duplicate = true;
             }
           }
         }
 
         if (!duplicate) {
-          ticketList.push({
+          orderList.push({
             "id": this.itemId,
-            "amount": amount.value
+            "amount": amount.value,
+            "type": this.itemType
           });
-          this.setCookie('tickets', JSON.stringify(ticketList), 7);
+          this.setCookie('producten', JSON.stringify(orderList), 7);
         } else {
-          this.setCookie('tickets', JSON.stringify(ticketList), 7);
+          this.setCookie('producten', JSON.stringify(orderList), 7);
         }
 
         this.success = "Product toegevoegd!";
@@ -164,23 +166,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   methods: {
     updateCart: function updateCart() {
-      var products = document.getElementsByClassName('c-cart__single');
       var cookieObj = new URLSearchParams(document.cookie.replaceAll("; ", "&"));
-      var ticketList = JSON.parse(cookieObj.get("tickets")) || [];
+      var productList = JSON.parse(cookieObj.get("producten")) || [];
       var productObject = [];
+      var elements = document.getElementsByClassName('product-amount');
 
-      for (var i = 0; i < products.length; i++) {
-        if (ticketList[i].id === parseInt(document.getElementById(ticketList[i].id).id)) {
-          if (parseInt(document.getElementById(ticketList[i].id).value) !== 0) {
+      for (var i = 0; i < productList.length; i++) {
+        console.log(productList[i].id, parseInt(document.getElementById(productList[i].id).id));
+
+        if (productList[i].id === parseInt(document.getElementById(productList[i].id).id) && elements[i].getAttribute('data-type') === productList[i].type) {
+          if (parseInt(document.getElementById(productList[i].id).value) !== 0) {
             productObject.push({
-              "id": ticketList[i].id,
-              "amount": document.getElementById(ticketList[i].id).value
+              "id": productList[i].id,
+              "amount": elements[i].value,
+              "type": productList[i].type
             });
           }
         }
       }
 
-      this.setCookie('tickets', JSON.stringify(productObject), 7);
+      this.setCookie('producten', JSON.stringify(productObject), 7);
       location.reload();
     },
     setCookie: function setCookie(name, value, days) {
