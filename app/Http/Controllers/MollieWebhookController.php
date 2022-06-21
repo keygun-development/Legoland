@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Mollie\Api\Exceptions\ApiException;
 use Mollie\Api\MollieApiClient;
 
 class MollieWebhookController extends Controller
 {
-    public function checkout(Request $request)
+    /**
+     * @throws ApiException
+     */
+    public function checkout(Request $request): RedirectResponse
     {
         $mollie = new MollieApiClient();
         $mollie->setApiKey(env("MOLLIE_KEY"));
@@ -38,6 +43,9 @@ class MollieWebhookController extends Controller
         return redirect()->away($payment->getCheckoutUrl());
     }
 
+    /**
+     * @throws ApiException
+     */
     public function handle() {
         $mollie = new MollieApiClient();
         $mollie->setApiKey(env("MOLLIE_KEY"));
