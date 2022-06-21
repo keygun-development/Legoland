@@ -8,6 +8,11 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}">
 </head>
 <body>
+@can('isAdmin')
+    <a href="/admin/dashboard" class="c-admin__bar">
+        Welkom {{ \Illuminate\Support\Facades\Auth::user()->name }} hier kun je klikken om gegevens te beheren
+    </a>
+@endcan
 <div id="header">
     @include('partials.header')
 </div>
