@@ -9,7 +9,7 @@
 </head>
 <body>
 @can('isAdmin')
-    <a href="/admin/overview" class="c-admin__bar">
+    <a href="/admin/dashboard" class="c-admin__bar">
         Welkom {{ \Illuminate\Support\Facades\Auth::user()->name }} hier kun je klikken om gegevens te beheren
     </a>
 @endcan
