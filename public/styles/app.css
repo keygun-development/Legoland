@@ -527,12 +527,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-6 {
   margin-top: 1.5rem;
 }
-.mt-12 {
-  margin-top: 3rem;
-}
-.mt-8 {
-  margin-top: 2rem;
-}
 .mt-4 {
   margin-top: 1rem;
 }
@@ -602,12 +596,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-11\/12 {
   width: 91.666667%;
 }
-.w-5\/12 {
-  width: 41.666667%;
-}
-.w-6\/12 {
-  width: 50%;
-}
 .w-2\/12 {
   width: 16.666667%;
 }
@@ -623,6 +611,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-3\/12 {
   width: 25%;
 }
+.w-6\/12 {
+  width: 50%;
+}
+.w-4\/12 {
+  width: 33.333333%;
+}
 .w-10 {
   width: 2.5rem;
 }
@@ -637,11 +631,11 @@ Ensure the default browser behavior of the `hidden` attribute.
      -moz-appearance: none;
           appearance: none;
 }
-.grid-cols-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 .flex-col {
   flex-direction: column;
@@ -852,6 +846,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tracking-wide {
   letter-spacing: 0.025em;
 }
+.text-\[\#7E7E7E\] {
+  --tw-text-opacity: 1;
+  color: rgb(126 126 126 / var(--tw-text-opacity));
+}
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
@@ -875,10 +873,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
-}
-.text-\[\#7E7E7E\] {
-  --tw-text-opacity: 1;
-  color: rgb(126 126 126 / var(--tw-text-opacity));
 }
 .text-red-500 {
   --tw-text-opacity: 1;
@@ -1100,6 +1094,14 @@ input, textarea {
 .c-image__rounded {
   border-radius: 14px;
   border: solid 1px #707070;
+}
+
+.c-admin__bar {
+  background-color: #000;
+  color: #fff;
+  justify-content: center;
+  display: flex;
+  width: 100%;
 }
 
 .hover\:bg-green-600:hover {
