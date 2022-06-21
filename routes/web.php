@@ -28,7 +28,7 @@ Route::get('/cart', [PageController::class, 'cartPage']);
 
 Route::get('/betalen', [PageController::class, 'checkoutPage']);
 
-Route::get('/inloggen', [PageController::class, 'loginPage']);
+Route::get('/inloggen', [PageController::class, 'loginPage'])->name('inloggen');
 
 Route::post('/inloggen/register', [UserController::class, 'register']);
 
@@ -60,10 +60,15 @@ Route::post('/contact/send', [ContactController::class, 'store']);
 
 Route::get('/accommodation', [PageController::class, 'accommodationPage']);
 
-Route::get(' /admin-tickets', [PageController::class, 'adminTicketPage']);
-Route::get(' /admin-accounts', [PageController::class, 'adminAccountPage']);
-Route::get(' /admin-accomodaties', [PageController::class, 'adminAccomodatiesPage']);
-Route::get(' /admin-attracties', [PageController::class, 'adminActractiesPage']);
+Route::get('/admin/dashboard', [PageController::class, 'adminDashboardPage'])->middleware('roleChecker');
+
+Route::get(' /admin/tickets', [PageController::class, 'adminTicketPage'])->middleware('roleChecker');
+
+Route::get(' /admin/accounts', [PageController::class, 'adminAccountPage'])->middleware('roleChecker');
+
+Route::get(' /admin/accomodaties', [PageController::class, 'adminAccomodatiesPage'])->middleware('roleChecker');
+
+Route::get(' /admin/attracties', [PageController::class, 'adminActractiesPage'])->middleware('roleChecker');
 
 Route::get('/payments/webhook/', [MollieWebhookController::class => 'handle'])->name('/payments/webhook/');
 

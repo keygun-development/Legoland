@@ -43,10 +43,3 @@
         </div>
     </div>
 </div>
-<script>
-  Vue.component("v-dropdown", require("components/v-dropdown.vue"));
-
-  new Vue({
-    el: "#app",
-  });
-</script>
