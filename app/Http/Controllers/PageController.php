@@ -93,21 +93,29 @@ class PageController extends Controller
         return view('newsletter', ['title' => 'Nieuwsbrief']);
     }
 
-    public function adminTicketPage(): Factory|View|\Illuminate\Contracts\Foundation\Application
+    public function adminDashboardPage()
     {
-        return view('admin-tickets', ['title' => 'Admin Tickets']);
+        return view('admin.dashboard', ['title' => 'Admin Dashboard']);
     }
-    public function adminAccountPage(): Factory|View|\Illuminate\Contracts\Foundation\Application
+
+    public function adminTicketPage()
     {
-        return view('admin-account', ['title' => 'Admin Accounts']);
+        return view('admin.tickets', ['title' => 'Admin Tickets']);
     }
-    public function adminAccommodationPage(): Factory|View|\Illuminate\Contracts\Foundation\Application
+
+    public function adminAccountPage()
     {
-        return view('admin-accomodaties', ['title' => 'Admin Accomodaties']);
+        return view('admin.account', ['title' => 'Admin Accounts']);
     }
-    public function adminAttractionPage(): Factory|View|\Illuminate\Contracts\Foundation\Application
+
+    public function adminAccomodatiesPage()
     {
-        return view('admin-attracties', ['title' => 'Admin Actracties']);
+        return view('admin.accomodaties', ['title' => 'Admin Accomodaties']);
+    }
+
+    public function adminActractiesPage()
+    {
+        return view('admin.attracties', ['title' => 'Admin Actracties']);
     }
 
     public function attractiondetailPage(Attraction $attraction): Factory|View|\Illuminate\Contracts\Foundation\Application
