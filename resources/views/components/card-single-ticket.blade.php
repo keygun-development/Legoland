@@ -8,7 +8,7 @@
     <p class="my-4">
         €{{ $ticket->price }}
     </p>
-    <a href="{{ '/tickets/'.$ticket->id }}" class="c-button c-button__default" href="#">
+    <a href="{{ '/tickets/'.$ticket->id }}" class="c-button c-button__default">
         Meer informatie
     </a>
 </div>
