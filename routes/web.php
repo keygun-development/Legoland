@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MollieWebhookController;
+use App\Http\Controllers\TicketController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
@@ -66,9 +67,9 @@ Route::get(' /admin/tickets', [PageController::class, 'adminTicketPage'])->middl
 
 Route::get(' /admin/accounts', [PageController::class, 'adminAccountPage'])->middleware('roleChecker');
 
-Route::get(' /admin/accomodaties', [PageController::class, 'adminAccomodatiesPage'])->middleware('roleChecker');
+Route::get(' /admin/accomodaties', [PageController::class, 'adminAccommodationPage'])->middleware('roleChecker');
 
-Route::get(' /admin/attracties', [PageController::class, 'adminActractiesPage'])->middleware('roleChecker');
+Route::get(' /admin/attracties', [PageController::class, 'adminAttractionPage'])->middleware('roleChecker');
 
 Route::get('/payments/webhook/', [MollieWebhookController::class => 'handle'])->name('/payments/webhook/');
 
@@ -79,3 +80,9 @@ Route::get('/order', [PageController::class, 'completePage']);
 Route::get('/attracties/{attraction:id}', [PageController::class, 'attractiondetailPage']);
 
 Route::get('/accommodations/{accommodation:id}', [PageController::class, 'accommodationdetailPage']);
+
+Route::post('/admin/tickets/{ticket:id}/update', [TicketController::class, 'update'])->name('/admin/tickets/update');
+
+Route::post('/admin/tickets/new', [TicketController::class, 'new'])->name('/admin/tickets/new');
+
+Route::get('/admin/tickets/{ticket:id}/delete', [TicketController::class, 'delete'])->where('id', '{ticket:id}')->name('/admin/tickets/delete');

@@ -490,6 +490,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .m-8 {
   margin: 2rem;
 }
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -502,9 +506,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: -0.75rem;
   margin-right: -0.75rem;
 }
-.my-4 {
+.mt-4 {
   margin-top: 1rem;
+}
+.mb-4 {
   margin-bottom: 1rem;
+}
+.mt-8 {
+  margin-top: 2rem;
 }
 .mt-5 {
   margin-top: 1.25rem;
@@ -526,15 +535,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mt-6 {
   margin-top: 1.5rem;
-}
-.mt-4 {
-  margin-top: 1rem;
-}
-.mb-4 {
-  margin-bottom: 1rem;
-}
-.mt-8 {
-  margin-top: 2rem;
 }
 .mt-12 {
   margin-top: 3rem;
@@ -578,20 +578,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .min-h-screen {
   min-height: 100vh;
 }
-.w-full {
-  width: 100%;
-}
-.w-6 {
-  width: 1.5rem;
-}
-.w-4 {
-  width: 1rem;
-}
-.w-11\/12 {
-  width: 91.666667%;
-}
 .w-2\/12 {
   width: 16.666667%;
+}
+.w-full {
+  width: 100%;
 }
 .w-1\/12 {
   width: 8.333333%;
@@ -604,6 +595,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-3\/12 {
   width: 25%;
+}
+.w-6 {
+  width: 1.5rem;
+}
+.w-4 {
+  width: 1rem;
 }
 .w-6\/12 {
   width: 50%;
@@ -636,6 +633,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .items-center {
   align-items: center;
+}
+.justify-start {
+  justify-content: flex-start;
 }
 .justify-end {
   justify-content: flex-end;
@@ -733,11 +733,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
+.bg-lime-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(132 204 22 / var(--tw-bg-opacity));
+}
 .bg-opacity-75 {
   --tw-bg-opacity: 0.75;
 }
 .p-4 {
   padding: 1rem;
+}
+.p-2 {
+  padding: 0.5rem;
 }
 .py-16 {
   padding-top: 4rem;
@@ -822,11 +829,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 1rem;
   line-height: 1.5rem;
 }
-.font-medium {
-  font-weight: 500;
-}
 .font-bold {
   font-weight: 700;
+}
+.font-medium {
+  font-weight: 500;
 }
 .uppercase {
   text-transform: uppercase;
@@ -840,6 +847,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-\[\#7E7E7E\] {
   --tw-text-opacity: 1;
   color: rgb(126 126 126 / var(--tw-text-opacity));
+}
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+.text-lime-500 {
+  --tw-text-opacity: 1;
+  color: rgb(132 204 22 / var(--tw-text-opacity));
 }
 .text-gray-500 {
   --tw-text-opacity: 1;
@@ -864,14 +879,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
-}
-.text-red-500 {
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
-}
-.text-lime-500 {
-  --tw-text-opacity: 1;
-  color: rgb(132 204 22 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;
@@ -1089,6 +1096,62 @@ input, textarea {
   justify-content: center;
   display: flex;
   width: 100%;
+}
+
+.c-admin__table .c-admin__table-top {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+.c-admin__table .c-admin__table-top td {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+.c-admin__table .c-admin__table-body {
+  border-top: solid 1px #6b7280;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.c-admin__table .c-admin__table-body td {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.c-admin__single {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.55);
+}
+.c-admin__single .c-admin__single-box {
+  padding: 20px;
+  background-color: white;
+  border-radius: 20px;
+  max-height: 600px;
+  overflow-y: scroll;
+  /* Handle */
+  /* Handle on hover */
+}
+.c-admin__single .c-admin__single-box::-webkit-scrollbar {
+  width: 10px;
+  padding-right: 10px;
+}
+.c-admin__single .c-admin__single-box::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+.c-admin__single .c-admin__single-box::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .c-sidebar {

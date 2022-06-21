@@ -1,6 +1,6 @@
 <template>
     <div>
-    <slot name="items"></slot>
+        <slot name="items"></slot>
         <p class="text-red-500">
             {{ error }}
         </p>
