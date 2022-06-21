@@ -6,9 +6,7 @@
             {{ $title }}
         </h1>
         <div class="grid grid-cols-2 gap-4">
-            @foreach($accommodations as $accommodation)
-                @include('components.card-single-accommodation', ['accommodation' => $accommodation])
-            @endforeach
+            @each('components.card-single-accommodation', $accommodations, 'item')
         </div>
     </div>
 @endsection

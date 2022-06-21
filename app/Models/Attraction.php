@@ -10,6 +10,6 @@ class Attraction extends ModelAbstract
 
     public static function getType(): string
     {
-        return 'attraction';
+        return 'attracties';
     }
 }

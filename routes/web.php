@@ -78,4 +78,4 @@ Route::get('/order', [PageController::class, 'completePage']);
 
 Route::get('/attracties/{attraction:id}', [PageController::class, 'attractiondetailPage']);
 
-Route::get('/accommodation/{accommodation:id}', [PageController::class, 'accommodationdetailPage']);
+Route::get('/accommodations/{accommodation:id}', [PageController::class, 'accommodationdetailPage']);

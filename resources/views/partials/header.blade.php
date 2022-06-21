@@ -1,4 +1,3 @@
-<script src="https://unpkg.com/vue@3"></script>
 <div class="c-header">
     <div class="c-header__container">
         <div class="w-full flex items-end p-4">

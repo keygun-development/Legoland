@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-    public function store(Request $request)
+    public function store(Request $request): \Illuminate\Routing\Redirector|\Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse
     {
         if (!$request->filled('name') || !$request->filled('email') || !$request->filled('message')) {
             return redirect('/contact')->with('error', 'Geef uw naam email en bericht op.');

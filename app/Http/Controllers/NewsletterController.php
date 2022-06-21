@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class NewsletterController extends Controller
 {
-    public function store(Request $request)
+    public function store(Request $request): \Illuminate\Routing\Redirector|\Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse
     {
         if (!$request->filled('name') || !$request->filled('email')) {
             return redirect('/nieuwsbrief')->with('error', 'Geef uw naam en email op.');
