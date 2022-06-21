@@ -66,9 +66,9 @@ Route::get(' /admin/tickets', [PageController::class, 'adminTicketPage'])->middl
 
 Route::get(' /admin/accounts', [PageController::class, 'adminAccountPage'])->middleware('roleChecker');
 
-Route::get(' /admin/accomodaties', [PageController::class, 'adminAccomodatiesPage'])->middleware('roleChecker');
+Route::get(' /admin/accomodaties', [PageController::class, 'adminAccommodationPage'])->middleware('roleChecker');
 
-Route::get(' /admin/attracties', [PageController::class, 'adminActractiesPage'])->middleware('roleChecker');
+Route::get(' /admin/attracties', [PageController::class, 'adminAttractionPage'])->middleware('roleChecker');
 
 Route::get('/payments/webhook/', [MollieWebhookController::class => 'handle'])->name('/payments/webhook/');
 
