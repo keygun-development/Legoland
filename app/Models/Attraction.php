@@ -3,9 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
-class Attraction extends Model
+class Attraction extends ModelAbstract
 {
     use HasFactory;
+
+    public static function getType(): string
+    {
+        return 'attraction';
+    }
 }

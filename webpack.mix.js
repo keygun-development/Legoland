@@ -27,4 +27,3 @@ mix
 
 mix
     .copyDirectory('resources/images', 'public/images')
-    .copyDirectory('resources/fonts', 'public/fonts')

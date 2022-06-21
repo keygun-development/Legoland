@@ -13,7 +13,7 @@
                 U ontvangt de tickets per mail direct na de aankoop. Vandaar dat wij uw mailadres nodig hebben.
             </p>
             @php($total = 0)
-            @if($amount)
+            @if($products)
                 <h2>
                     Producten:
                 </h2>

@@ -9,5 +9,5 @@
         €{{ $ticket->price }}
     </p>
     Aantal:
-    <input type="number" value="{{ $amount }}" id="{{ $ticket->id }}" />
+    <input class="product-amount" type="number" value="{{ $amount }}" id="{{ $ticket->id }}" data-type="{{ $ticket->getType() }}" />
 </div>
