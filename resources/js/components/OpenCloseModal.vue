@@ -2,6 +2,10 @@
 <script>
     export default {
         mounted () {
+            document.querySelector('.closeModal').addEventListener('click', function(e){
+                document.querySelector('#interestModal').classList.add('invisible');
+            });
+
             document.querySelector('.openModal').addEventListener('click', function(e){
                 document.querySelector('#interestModal').classList.remove('invisible');
             });

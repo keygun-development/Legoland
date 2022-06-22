@@ -7,6 +7,7 @@ use App\Models\Attraction;
 use App\Models\Order;
 use App\Models\Ticket;
 use App\Models\Cart;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
@@ -92,7 +93,8 @@ class PageController extends Controller
     }
     public function adminAccountPage()
     {
-        return view('admin-account', ['title' => 'Admin Accounts']);
+        $users = User::all();
+        return view('admin-account', ['title' => 'Admin Accounts', 'users' => $users]);
     }
     public function adminAccomodatiesPage()
     {

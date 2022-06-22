@@ -10,3 +10,11 @@ app.component('AddToCart', AddToCart)
 app.component('UpdateCart', UpdateCart)
 app.component('Modal', Modal)
 app.mount('#main')
+
+function closeModal() {
+    document.querySelector('#interestModal').classList.add('invisible');
+}
+
+function openModal() {
+    document.querySelector('#interestModal').classList.remove('invisible');
+}
