@@ -8,7 +8,7 @@
     <a href="/admin/tickets">
         <i class="fa-solid fa-ticket fa-2xl"></i>
     </a>
-    <a href="/admin/accomodaties">
+    <a href="/admin/accommodaties">
         <i class="fa-solid fa-hotel fa-2xl"></i>
     </a>
     <a href="/admin/attracties">

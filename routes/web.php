@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccommodationController;
 use App\Http\Controllers\AttractionController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MollieWebhookController;
@@ -69,7 +70,7 @@ Route::get(' /admin/tickets', [PageController::class, 'adminTicketPage'])->middl
 
 Route::get(' /admin/accounts', [PageController::class, 'adminAccountPage'])->middleware('roleChecker');
 
-Route::get(' /admin/accomodaties', [PageController::class, 'adminAccommodationPage'])->middleware('roleChecker');
+Route::get(' /admin/accommodaties', [PageController::class, 'adminAccommodationPage'])->middleware('roleChecker');
 
 Route::get(' /admin/attracties', [PageController::class, 'adminAttractionPage'])->middleware('roleChecker');
 
@@ -102,4 +103,10 @@ Route::post('/admin/attracties/{attraction:id}/update', [AttractionController::c
 Route::post('/admin/attracties/new', [AttractionController::class, 'new'])->name('/admin/attracties/new');
 
 Route::get('/admin/attracties/{attraction:id}/delete', [AttractionController::class, 'delete'])->where('id', '{attraction:id}')->name('/admin/attracties/delete');
+
+Route::post('/admin/accommodaties/{accommodation:id}/update', [AccommodationController::class, 'update'])->name('/admin/accommodaties/update');
+
+Route::post('/admin/accommodaties/new', [AccommodationController::class, 'new'])->name('/admin/accommodaties/new');
+
+Route::get('/admin/accommodaties/{accommodation:id}/delete', [AccommodationController::class, 'delete'])->where('id', '{accommodation:id}')->name('/admin/accommodaties/delete');
 
