@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MollieWebhookController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -71,6 +72,8 @@ Route::get(' /admin/accomodaties', [PageController::class, 'adminAccommodationPa
 
 Route::get(' /admin/attracties', [PageController::class, 'adminAttractionPage'])->middleware('roleChecker');
 
+Route::get(' /admin/bestellingen', [PageController::class, 'adminOrdersPage'])->middleware('roleChecker');
+
 Route::get('/payments/webhook/', [MollieWebhookController::class => 'handle'])->name('/payments/webhook/');
 
 Route::post('/betalen/send', [MollieWebhookController::class, 'checkout'])->name('/betalen/send');
@@ -86,3 +89,10 @@ Route::post('/admin/tickets/{ticket:id}/update', [TicketController::class, 'upda
 Route::post('/admin/tickets/new', [TicketController::class, 'new'])->name('/admin/tickets/new');
 
 Route::get('/admin/tickets/{ticket:id}/delete', [TicketController::class, 'delete'])->where('id', '{ticket:id}')->name('/admin/tickets/delete');
+
+Route::post('/admin/bestellingen/{order:id}/update', [OrderController::class, 'update'])->name('/admin/bestellingen/update');
+
+Route::post('/admin/bestellingen/new', [OrderController::class, 'new'])->name('/admin/bestellingen/new');
+
+Route::get('/admin/bestellingen/{order:id}/delete', [OrderController::class, 'delete'])->where('id', '{order:id}')->name('/admin/bestellingen/delete');
+

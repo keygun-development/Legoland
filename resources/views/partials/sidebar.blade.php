@@ -14,4 +14,7 @@
     <a href="/admin/attracties">
         <i class="fa-solid fa-star fa-2xl"></i>
     </a>
+    <a href="/admin/bestellingen">
+        <i class="fa-solid fa-clipboard-list fa-2xl"></i>
+    </a>
 </div>

@@ -100,11 +100,11 @@ __webpack_require__.r(__webpack_exports__);
       url.searchParams.set("edit", id);
       window.location = decodeURIComponent(url.href);
     },
-    DeleteRow: function DeleteRow(id) {
+    DeleteRow: function DeleteRow(id, type) {
       if (window.confirm("Weet u zeker dat u dit item wilt verwijderen?")) {
-        window.location.href = '/admin/tickets/' + id + '/delete';
+        window.location.href = '/admin/' + type + '/' + id + '/delete';
       } else {
-        window.location.href = '/admin/tickets';
+        window.location.href = '/admin/' + type;
       }
     }
   }

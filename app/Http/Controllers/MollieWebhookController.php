@@ -34,7 +34,7 @@ class MollieWebhookController extends Controller
         $newOrder = new Order();
         $newOrder->name = $request->name;
         $newOrder->email = $request->email;
-        $newOrder->tickets = $_COOKIE['tickets'];
+        $newOrder->tickets = $_COOKIE['producten'];
         $newOrder->price = $request->price;
         $newOrder->user_id = $request->userid || 0;
         $newOrder->mollie_order_id = $orderId;

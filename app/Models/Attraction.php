@@ -12,4 +12,9 @@ class Attraction extends ModelAbstract
     {
         return 'attracties';
     }
+
+    static public function resolveUrl(): string
+    {
+        return 'attracties';
+    }
 }

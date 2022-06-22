@@ -7,9 +7,6 @@ use App\Models\Attraction;
 use App\Models\Order;
 use App\Models\Ticket;
 use App\Models\Cart;
-use Illuminate\Contracts\Console\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Mollie\Api\Exceptions\ApiException;
@@ -107,6 +104,16 @@ class PageController extends Controller
     public function adminAccountPage()
     {
         return view('admin.account', ['title' => 'Admin Accounts']);
+    }
+
+    public function adminOrdersPage(Request $request, Order $order)
+    {
+        return view('admin.bestellingen',
+            [
+                'title' => 'Admin Bestellingen',
+                'orders' => Order::all(),
+                'single' => $request->has('edit') ? $order->where('id', $request->input('edit'))->get() : ''
+            ]);
     }
 
     public function adminAccommodationPage()
