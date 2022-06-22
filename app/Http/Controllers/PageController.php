@@ -7,6 +7,7 @@ use App\Models\Attraction;
 use App\Models\Order;
 use App\Models\Ticket;
 use App\Models\Cart;
+use App\Models\User;
 use Illuminate\Contracts\Console\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -104,9 +105,9 @@ class PageController extends Controller
         return view('admin.tickets', ['title' => 'Admin Tickets', 'tickets' => Ticket::all(), 'single' => $request->has('edit') ? $ticket->where('id', $request->input('edit'))->get() : '']);
     }
 
-    public function adminAccountPage()
+    public function adminAccountPage(Request $request, User $user)
     {
-        return view('admin.account', ['title' => 'Admin Accounts']);
+        return view('admin.account', ['title' => 'Admin Accounts', 'users' => User::all(), 'single' => $request->has('edit') ? $user->where('id', $request->input('edit'))->get() : '']);
     }
 
     public function adminAccommodationPage()

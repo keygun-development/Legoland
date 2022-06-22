@@ -86,3 +86,9 @@ Route::post('/admin/tickets/{ticket:id}/update', [TicketController::class, 'upda
 Route::post('/admin/tickets/new', [TicketController::class, 'new'])->name('/admin/tickets/new');
 
 Route::get('/admin/tickets/{ticket:id}/delete', [TicketController::class, 'delete'])->where('id', '{ticket:id}')->name('/admin/tickets/delete');
+
+Route::post('/admin/accounts/{user:id}/update', [UserController::class, 'update'])->name('/admin/accounts/update');
+
+Route::post('/admin/accounts/new', [UserController::class, 'new'])->name('/admin/accounts/new');
+
+Route::get('/admin/accounts/{user:id}/delete', [UserController::class, 'delete'])->where('id', '{user:id}')->name('/admin/accounts/delete');
