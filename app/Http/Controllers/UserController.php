@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function register(Request $request): \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|\Illuminate\Contracts\Foundation\Application|null
+    public function register(Request $request)
     {
         if (!$request->filled('name') || !$request->filled('email') || !$request->filled('password')) {
             return redirect('/inloggen')->with('errorRegister', 'Geef uw naam, e-mailadres en wachtwoord op.');
@@ -32,7 +32,7 @@ class UserController extends Controller
         return null;
     }
 
-    public function updateUser(Request $request): \Illuminate\Routing\Redirector|\Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse
+    public function updateUser(Request $request)
     {
         if (!$request->filled('name') || !$request->filled('email')) {
             return redirect('/inloggen')->with('error', 'Geef uw naam en e-mailadres op.');
@@ -46,7 +46,7 @@ class UserController extends Controller
         }
     }
 
-    public function login(Request $request): \Illuminate\Routing\Redirector|\Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse
+    public function login(Request $request)
     {
         if (!$request->filled('email') || !$request->filled('password')) {
             return redirect('/inloggen')->with('errorLogin', 'Geef uw e-mailadres en wachtwoord op.');
@@ -65,7 +65,7 @@ class UserController extends Controller
         }
     }
 
-    public function logout(Request $request): \Illuminate\Routing\Redirector|\Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse
+    public function logout(Request $request)
     {
         Auth::logout();
 

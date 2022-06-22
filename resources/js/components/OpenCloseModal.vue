@@ -1,22 +1,17 @@
-<template></template>
+<template>
+    <slot name="modal"></slot>
+</template>
 <script>
     export default {
-        mounted () {
-            document.querySelector('.openModal').addEventListener('click', function(e){
-                document.querySelector('#interestModal').classList.remove('invisible');
-            });
+        methods: {
+            closeModal: function () {
+                let url = new URL(window.location.href);
 
-            document.querySelector('.openModal1').addEventListener('click', function(e){
-                document.querySelector('#interestModal').classList.remove('invisible');
-            });
+                url.searchParams.delete('edit')
+                url.searchParams.delete('new')
 
-            document.querySelector('.openModal2').addEventListener('click', function(e){
-                document.querySelector('#interestModal').classList.remove('invisible');
-            });
-
-            document.querySelector('.closeModal').addEventListener('click', function(e){
-                document.querySelector('#interestModal').classList.add('invisible');
-            });
+                window.location = decodeURIComponent(url.href)
+            }
         }
     }
 </script>

@@ -10,6 +10,7 @@ use App\Models\Cart;
 use Illuminate\Contracts\Console\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Mollie\Api\Exceptions\ApiException;
 
@@ -98,9 +99,9 @@ class PageController extends Controller
         return view('admin.dashboard', ['title' => 'Admin Dashboard']);
     }
 
-    public function adminTicketPage()
+    public function adminTicketPage(Request $request, Ticket $ticket)
     {
-        return view('admin.tickets', ['title' => 'Admin Tickets']);
+        return view('admin.tickets', ['title' => 'Admin Tickets', 'tickets' => Ticket::all(), 'single' => $request->has('edit') ? $ticket->where('id', $request->input('edit'))->get() : '']);
     }
 
     public function adminAccountPage()
