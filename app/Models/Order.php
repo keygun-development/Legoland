@@ -9,7 +9,31 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @mixin Builder
  */
-class Order extends Model
+class Order extends ModelAbstract
 {
     use HasFactory;
+
+    public function getModelFromOrder(Order $order): array
+    {
+        $products = [];
+        foreach (json_decode($order->tickets) as $product)
+        {
+            if ($product->type === Ticket::getType()) {
+                array_push($products, Ticket::find($product->id));
+            } else {
+                array_push($products, Accommodation::find($product->id));
+            }
+        }
+        return $products;
+    }
+
+    public static function getType(): string
+    {
+        return 'order';
+    }
+
+    static public function resolveUrl(): string
+    {
+        return 'bestellingen';
+    }
 }
