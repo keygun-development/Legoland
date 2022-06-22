@@ -110,3 +110,8 @@ Route::post('/admin/accommodaties/new', [AccommodationController::class, 'new'])
 
 Route::get('/admin/accommodaties/{accommodation:id}/delete', [AccommodationController::class, 'delete'])->where('id', '{accommodation:id}')->name('/admin/accommodaties/delete');
 
+Route::post('/admin/accounts/{user:id}/update', [UserController::class, 'update'])->name('/admin/accounts/update');
+
+Route::post('/admin/accounts/new', [UserController::class, 'new'])->name('/admin/accounts/new');
+
+Route::get('/admin/accounts/{user:id}/delete', [UserController::class, 'delete'])->where('id', '{user:id}')->name('/admin/accounts/delete');

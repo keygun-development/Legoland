@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class UserController extends Controller
+class UserController extends ControllerAbstract
 {
     public function register(Request $request)
     {
@@ -74,5 +74,43 @@ class UserController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/inloggen');
+    }
+
+    public static function update(Request $request)
+    {
+        if (!$request->filled('name') || !$request->filled('email') || !$request->filled('password') || !$request->filled('role')) {
+            return redirect('/admin/accounts')->with('error', 'Niet alle velden zijn ingevuld');
+        } else {
+            $user = User::where('id', $request->input('id'));
+            $user->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => $request->password,
+                'role' => $request->role
+            ]);
+            return redirect('/admin/accounts')->with('success', 'Account is succesvol geupdatet');
+        }
+    }
+
+    public static function new(Request $request)
+    {
+        if (!$request->filled('name') || !$request->filled('email') || !$request->filled('password') || !$request->filled('role')) {
+            return redirect('/admin/accounts')->with('error', 'Niet alle velden zijn ingevuld');
+        } else {
+            $user = new User();
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->password = $request->password;
+            $user->role = $request->role;
+            $user->save();
+            return redirect('/admin/accounts')->with('success', 'Account is succesvol geupdatet');
+        }
+    }
+
+    public static function delete(Request $request, $id)
+    {
+        $user = User::where('id', $id);
+        $user->delete();
+        return redirect('/admin/accounts')->with('success', 'Account is succesvol verwijderd');
     }
 }
