@@ -121,9 +121,9 @@ class PageController extends Controller
         return view('admin.accomodaties', ['title' => 'Admin Accomodaties']);
     }
 
-    public function adminAttractionPage()
+    public function adminAttractionPage(Request $request, Attraction $attraction)
     {
-        return view('admin.attracties', ['title' => 'Admin Actracties']);
+        return view('admin.attracties', ['title' => 'Admin Attracties', 'attractions' => Attraction::all(), 'single' => $request->has('edit') ? $attraction->where('id', $request->input('edit'))->get() : '']);
     }
 
     public function attractiondetailPage(Attraction $attraction)

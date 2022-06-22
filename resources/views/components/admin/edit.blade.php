@@ -67,6 +67,14 @@
                                 <textarea class="mt-2 p-2" type="text" name="description" value="{{ $item->description }}"></textarea>
                             </div>
                         @endif
+                        @if($item->imageUrl)
+                            <div>
+                                <p class="font-bold">
+                                    Image url:
+                                </p>
+                                <input class="mt-2 p-2" type="text" name="imageUrl" value="{{ $item->imageUrl }}" />
+                            </div>
+                        @endif
                         @if($item->price)
                             <div class="mt-4">
                                 <p class="font-bold">

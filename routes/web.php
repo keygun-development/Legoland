@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AttractionController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MollieWebhookController;
 use App\Http\Controllers\OrderController;
@@ -95,4 +96,10 @@ Route::post('/admin/bestellingen/{order:id}/update', [OrderController::class, 'u
 Route::post('/admin/bestellingen/new', [OrderController::class, 'new'])->name('/admin/bestellingen/new');
 
 Route::get('/admin/bestellingen/{order:id}/delete', [OrderController::class, 'delete'])->where('id', '{order:id}')->name('/admin/bestellingen/delete');
+
+Route::post('/admin/attracties/{attraction:id}/update', [AttractionController::class, 'update'])->name('/admin/attracties/update');
+
+Route::post('/admin/attracties/new', [AttractionController::class, 'new'])->name('/admin/attracties/new');
+
+Route::get('/admin/attracties/{attraction:id}/delete', [AttractionController::class, 'delete'])->where('id', '{attraction:id}')->name('/admin/attracties/delete');
 

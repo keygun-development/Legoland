@@ -24,6 +24,11 @@
             {{ $item->description }}
         </td>
     @endif
+    @if($item->imageUrl)
+        <td class="admin-table-item">
+            {{ $item->imageUrl }}
+        </td>
+    @endif
     @if($item->price !== null)
         <td class="admin-table-item">
             €{{ $item->price }}
