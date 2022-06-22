@@ -7,7 +7,7 @@
                 <div @click="$refs.adminRef.closeModal()" class="flex justify-end">
                     <i class="cursor-pointer fa-solid fa-xmark text-red-500 fa-2xl"></i>
                 </div>
-                <form action="/admin/admin/new" method="post" class="flex flex-col">
+                <form action="/admin/accounts/new" method="post" class="flex flex-col">
                     @csrf
                     <div>
                         <p class="font-bold">

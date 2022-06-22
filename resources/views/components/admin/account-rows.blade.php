@@ -18,7 +18,7 @@
     <td class="text-center cursor-pointer" @click="$refs.adminRef.EditRow({{ $item->id }})">
         <i class="fa-solid fa-pen-to-square text-blue-400"></i>
     </td>
-    <td class="text-center cursor-pointer" @click="$refs.adminRef.DeleteRow({{ $item->id }})">
+    <td class="text-center cursor-pointer" @click="$refs.adminRef.DeleteRow({{ $item->id }},  {{ json_encode($item->resolveUrl()) }})">
         <i class="fa-solid fa-trash text-red-400"></i>
     </td>
 </tr>

@@ -1,10 +1,15 @@
 @extends('layouts.admin')
 @section('pageTitle', 'Admin User')
 @section('content')
-<div class="container flex justify-center mx-auto">
+<div class="container mx-auto">
     <h1>
         {{ $title }}
     </h1>
+    <div class="flex justify-start">
+        <a href="/admin/accounts?new=true" class="p-4 bg-lime-500 cursor-pointer">
+            <i class="fa-solid fa-plus text-white fa-2xl"></i>
+        </a>
+    </div>
     <admin-table
         ref="adminRef"
     >
