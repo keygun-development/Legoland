@@ -28,11 +28,11 @@ export default {
             window.location = decodeURIComponent(url.href)
         },
 
-        DeleteRow: function (id) {
+        DeleteRow: function (id, type) {
             if (window.confirm("Weet u zeker dat u dit item wilt verwijderen?")) {
-                window.location.href = '/admin/tickets/'+id+'/delete'
+                window.location.href = '/admin/'+type+'/'+id+'/delete'
             } else {
-                window.location.href = '/admin/tickets'
+                window.location.href = '/admin/'+type
             }
         }
     }

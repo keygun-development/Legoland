@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 abstract class ModelAbstract extends Model
 {
-    abstract static protected function getType();
+    abstract static public function getType();
+
+    abstract static public function resolveUrl();
 }

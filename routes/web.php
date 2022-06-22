@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\AccommodationController;
+use App\Http\Controllers\AttractionController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MollieWebhookController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -67,9 +70,11 @@ Route::get(' /admin/tickets', [PageController::class, 'adminTicketPage'])->middl
 
 Route::get(' /admin/accounts', [PageController::class, 'adminAccountPage'])->middleware('roleChecker');
 
-Route::get(' /admin/accomodaties', [PageController::class, 'adminAccommodationPage'])->middleware('roleChecker');
+Route::get(' /admin/accommodaties', [PageController::class, 'adminAccommodationPage'])->middleware('roleChecker');
 
 Route::get(' /admin/attracties', [PageController::class, 'adminAttractionPage'])->middleware('roleChecker');
+
+Route::get(' /admin/bestellingen', [PageController::class, 'adminOrdersPage'])->middleware('roleChecker');
 
 Route::get('/payments/webhook/', [MollieWebhookController::class => 'handle'])->name('/payments/webhook/');
 
@@ -86,6 +91,24 @@ Route::post('/admin/tickets/{ticket:id}/update', [TicketController::class, 'upda
 Route::post('/admin/tickets/new', [TicketController::class, 'new'])->name('/admin/tickets/new');
 
 Route::get('/admin/tickets/{ticket:id}/delete', [TicketController::class, 'delete'])->where('id', '{ticket:id}')->name('/admin/tickets/delete');
+
+Route::post('/admin/bestellingen/{order:id}/update', [OrderController::class, 'update'])->name('/admin/bestellingen/update');
+
+Route::post('/admin/bestellingen/new', [OrderController::class, 'new'])->name('/admin/bestellingen/new');
+
+Route::get('/admin/bestellingen/{order:id}/delete', [OrderController::class, 'delete'])->where('id', '{order:id}')->name('/admin/bestellingen/delete');
+
+Route::post('/admin/attracties/{attraction:id}/update', [AttractionController::class, 'update'])->name('/admin/attracties/update');
+
+Route::post('/admin/attracties/new', [AttractionController::class, 'new'])->name('/admin/attracties/new');
+
+Route::get('/admin/attracties/{attraction:id}/delete', [AttractionController::class, 'delete'])->where('id', '{attraction:id}')->name('/admin/attracties/delete');
+
+Route::post('/admin/accommodaties/{accommodation:id}/update', [AccommodationController::class, 'update'])->name('/admin/accommodaties/update');
+
+Route::post('/admin/accommodaties/new', [AccommodationController::class, 'new'])->name('/admin/accommodaties/new');
+
+Route::get('/admin/accommodaties/{accommodation:id}/delete', [AccommodationController::class, 'delete'])->where('id', '{accommodation:id}')->name('/admin/accommodaties/delete');
 
 Route::post('/admin/accounts/{user:id}/update', [UserController::class, 'update'])->name('/admin/accounts/update');
 

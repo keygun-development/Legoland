@@ -32,7 +32,7 @@ class TicketController extends ControllerAbstract
             $ticket->description = $request->description;
             $ticket->price = $request->price;
             $ticket->save();
-            return redirect('/admin/tickets')->with('success', 'Ticket is succesvol geupdatet');
+            return redirect('/admin/tickets')->with('success', 'Ticket is succesvol aangemaakt');
         }
     }
 

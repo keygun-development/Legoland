@@ -15,4 +15,9 @@ class Ticket extends ModelAbstract
     {
         return 'tickets';
     }
+
+    static public function resolveUrl(): string
+    {
+        return 'tickets';
+    }
 }

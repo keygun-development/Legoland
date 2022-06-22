@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 abstract class ControllerAbstract
 {
-    abstract static protected function update(Request $request);
+    abstract static public function update(Request $request);
 
-    abstract static protected function new(Request $request);
+    abstract static public function new(Request $request);
 
-    abstract static protected function delete(Request $request, $id);
+    abstract static public function delete(Request $request, $id);
 }

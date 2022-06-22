@@ -8,9 +8,6 @@ use App\Models\Order;
 use App\Models\Ticket;
 use App\Models\Cart;
 use App\Models\User;
-use Illuminate\Contracts\Console\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Mollie\Api\Exceptions\ApiException;
@@ -110,14 +107,24 @@ class PageController extends Controller
         return view('admin.account', ['title' => 'Admin Accounts', 'users' => User::all(), 'single' => $request->has('edit') ? $user->where('id', $request->input('edit'))->get() : '']);
     }
 
-    public function adminAccommodationPage()
+    public function adminOrdersPage(Request $request, Order $order)
     {
-        return view('admin.accomodaties', ['title' => 'Admin Accomodaties']);
+        return view('admin.bestellingen',
+            [
+                'title' => 'Admin Bestellingen',
+                'orders' => Order::all(),
+                'single' => $request->has('edit') ? $order->where('id', $request->input('edit'))->get() : ''
+            ]);
     }
 
-    public function adminAttractionPage()
+    public function adminAccommodationPage(Request $request, Accommodation $accommodation)
     {
-        return view('admin.attracties', ['title' => 'Admin Actracties']);
+        return view('admin.accomodaties', ['title' => 'Admin Accomodaties', 'accommodations' => Accommodation::all(), 'single' => $request->has('edit') ? $accommodation->where('id', $request->input('edit'))->get() : '']);
+    }
+
+    public function adminAttractionPage(Request $request, Attraction $attraction)
+    {
+        return view('admin.attracties', ['title' => 'Admin Attracties', 'attractions' => Attraction::all(), 'single' => $request->has('edit') ? $attraction->where('id', $request->input('edit'))->get() : '']);
     }
 
     public function attractiondetailPage(Attraction $attraction)
