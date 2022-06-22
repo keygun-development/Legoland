@@ -116,9 +116,9 @@ class PageController extends Controller
             ]);
     }
 
-    public function adminAccommodationPage()
+    public function adminAccommodationPage(Request $request, Accommodation $accommodation)
     {
-        return view('admin.accomodaties', ['title' => 'Admin Accomodaties']);
+        return view('admin.accomodaties', ['title' => 'Admin Accomodaties', 'accommodations' => Accommodation::all(), 'single' => $request->has('edit') ? $accommodation->where('id', $request->input('edit'))->get() : '']);
     }
 
     public function adminAttractionPage(Request $request, Attraction $attraction)
