@@ -15,6 +15,6 @@ class Accommodation extends ModelAbstract
 
     public static function resolveUrl(): string
     {
-        return 'accommodation';
+        return 'accommodaties';
     }
 }
